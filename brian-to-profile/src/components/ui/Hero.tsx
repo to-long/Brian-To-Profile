@@ -55,7 +55,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="mb-3 font-captions text-xs font-medium tracking-[0.2em] text-[var(--color-foreground-secondary)] md:text-[13px]"
+        className="mb-3 text-center font-captions text-xs font-medium tracking-[0.2em] text-[var(--color-foreground-secondary)] md:text-[13px]"
       >
         {t("caption")}
       </motion.p>
