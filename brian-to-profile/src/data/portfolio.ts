@@ -14,16 +14,26 @@ import {
 } from "lucide-react";
 
 export const COMPANIES = [
-  { name: "MONEY FORWARD", weight: 700, spacing: 2 },
-  { name: "CROSSIAN", weight: 600, spacing: 1.5 },
-  { name: "NITECO", weight: 500, spacing: 1.5 },
-  { name: "FPT", weight: 800, spacing: 1 },
+  [
+    { name: "MONEY FORWARD", weight: 700, spacing: 2 },
+    { name: "CROSSIAN", weight: 600, spacing: 1.5 },
+    { name: "NITECO", weight: 500, spacing: 1.5 },
+    { name: "FPT", weight: 800, spacing: 1 },
+  ],
+  [
+    { name: "ANDPAD", weight: 700, spacing: 3 },
+    { name: "CBTW", weight: 500, spacing: 1 },
+    { name: "VIETTEL", weight: 600, spacing: 1 },
+    { name: "VinGroup", weight: 700, spacing: 0 },
+  ],
 ] as const;
 
 export type FeatureItem = {
   icon: LucideIcon;
   title: string;
   description: string;
+  iconColor: string;
+  bgGradient: [string, string];
 };
 
 export const FEATURES: FeatureItem[] = [
@@ -32,24 +42,32 @@ export const FEATURES: FeatureItem[] = [
     title: "Full-Stack Engineering",
     description:
       "From React to Go, Node.js to Python — end-to-end product delivery at scale.",
+    iconColor: "#2563EB",
+    bgGradient: ["#DBEAFE", "#BFDBFE"],
   },
   {
     icon: Layers,
     title: "System Architecture",
     description:
       "Microservices, Micro-FE, and cloud-native systems built for millions of users.",
+    iconColor: "#0066FF",
+    bgGradient: ["#DBEAFE", "#BFDBFE"],
   },
   {
     icon: Zap,
     title: "AI Integration",
     description:
       "RAG, LLMs, and AI-powered tools that boosted team productivity by 30%.",
+    iconColor: "#4F46E5",
+    bgGradient: ["#E0E7FF", "#C7D2FE"],
   },
   {
     icon: Users,
     title: "Technical Leadership",
     description:
       "Leading 15+ engineers across Vietnam, Japan, and India with clarity and craft.",
+    iconColor: "#7C3AED",
+    bgGradient: ["#EDE9FE", "#DDD6FE"],
   },
 ];
 
@@ -213,7 +231,7 @@ export const CONTACT = {
   email: "longth.bka@gmail.com",
   phone: "(+84) 355 960 650",
   linkedin: "https://www.linkedin.com/in/to-hoang-long-brian/",
-  linkedinLabel: "linkedin.com/in/to-hoang-long-brian",
+  linkedinLabel: "to-hoang-long-brian",
   location: "Hanoi, Vietnam",
 } as const;
 
