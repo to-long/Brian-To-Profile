@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headings: "Inter", system-ui, sans-serif;
+  --font-body: "Geist", system-ui, sans-serif;
+  --font-captions: "Funnel Sans", system-ui, sans-serif;
+
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-foreground-primary: #1a1a1a;
+  --color-foreground-secondary: #666666;
+  --color-foreground-muted: #999999;
+  --color-accent: #0066ff;
+  --color-accent-soft: #eaf2ff;
+  --color-border-subtle: #eeeeee;
+  --color-tag-orange: #fff1e5;
+  --color-tag-orange-fg: #b8530b;
+  --color-tag-green: #eaf8ea;
+  --color-tag-green-fg: #1f7a1f;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+  --color-surface: #0c0c0e;
+  --color-surface-elevated: #18181b;
+  --color-foreground-primary: #f4f4f5;
+  --color-foreground-secondary: #a1a1aa;
+  --color-foreground-muted: #71717a;
+  --color-border-subtle: #27272a;
+  --color-accent-soft: #1a2540;
+  --color-tag-orange: #2d1d10;
+  --color-tag-orange-fg: #fbbf24;
+  --color-tag-green: #112d12;
+  --color-tag-green-fg: #4ade80;
+}
+
+html,
+body {
+  background-color: var(--color-surface);
+  color: var(--color-foreground-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.6s;
+}
+
+::view-transition-old(root) {
+  animation: theme-fade-out 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+::view-transition-new(root) {
+  animation: theme-fade-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes theme-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes theme-fade-in {
+  from {
+    clip-path: circle(0% at var(--theme-x, 50%) var(--theme-y, 0%));
+  }
+  to {
+    clip-path: circle(150% at var(--theme-x, 50%) var(--theme-y, 0%));
+  }
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

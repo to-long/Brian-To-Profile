@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "brian-to-profile (Next.js)",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": ["run", "--cwd", "../brian-to-profile", "dev"],
+      "port": 3000
+    }
+  ]
+}

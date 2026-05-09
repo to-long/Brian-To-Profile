@@ -1,0 +1,49 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { TECH_STACK } from "@/data/portfolio";
+import { useLanguage } from "@/hooks/useLanguage";
+import { Reveal } from "@/components/animations/Reveal";
+
+export function TechStack() {
+  const { t } = useLanguage();
+  return (
+    <section id="tech" className="flex flex-col items-center gap-12 py-16">
+      <Reveal>
+        <div className="flex flex-col items-center gap-3">
+          <h2 className="text-center font-headings text-4xl font-semibold md:text-5xl">
+            {t.tech.heading}
+          </h2>
+          <p className="max-w-xl text-center text-[var(--color-foreground-secondary)]">
+            {t.tech.subheading}
+          </p>
+        </div>
+      </Reveal>
+
+      <div className="grid w-full max-w-5xl grid-cols-1 gap-4 px-6 md:grid-cols-3 md:gap-6">
+        {TECH_STACK.map((cat, i) => {
+          const Icon = cat.icon;
+          return (
+            <motion.div
+              key={cat.title}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -3, borderColor: "var(--color-accent)" }}
+              className="flex flex-col gap-4 rounded-2xl border border-[var(--color-border-subtle)] p-7 transition-colors"
+            >
+              <div className="flex items-center gap-2.5">
+                <Icon size={20} className="text-[var(--color-accent)]" strokeWidth={1.8} />
+                <h3 className="font-headings text-base font-semibold">{cat.title}</h3>
+              </div>
+              <p className="whitespace-pre-line text-[13px] leading-relaxed text-[var(--color-foreground-secondary)]">
+                {cat.items}
+              </p>
+            </motion.div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
