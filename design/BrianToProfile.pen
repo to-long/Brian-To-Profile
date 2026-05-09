@@ -4,8 +4,8 @@
     {
       "type": "frame",
       "id": "bi8Au",
-      "x": -673,
-      "y": 333,
+      "x": -923,
+      "y": -121,
       "name": "Frame",
       "clip": true,
       "width": 1440,
@@ -45,7 +45,37 @@
                   "name": "btLogo",
                   "width": 32,
                   "height": 32,
-                  "fill": "#0166ffff",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 135,
+                    "size": {
+                      "height": 1.2
+                    },
+                    "colors": [
+                      {
+                        "color": "#22D3EE",
+                        "position": 0
+                      },
+                      {
+                        "color": "#0EA5E9",
+                        "position": 0.25
+                      },
+                      {
+                        "color": "#0066FF",
+                        "position": 0.75
+                      },
+                      {
+                        "color": "#3B82F6",
+                        "position": 0.5
+                      },
+                      {
+                        "color": "#4F46E5",
+                        "position": 1
+                      }
+                    ]
+                  },
                   "cornerRadius": 32,
                   "effect": [
                     {
@@ -79,7 +109,7 @@
                       "lineHeight": 1,
                       "fontFamily": "$font-headings",
                       "fontSize": 15,
-                      "fontWeight": "800",
+                      "fontWeight": "700",
                       "letterSpacing": -0.8
                     }
                   ]
@@ -421,6 +451,70 @@
               "fontFamily": "$font-body",
               "fontSize": 18,
               "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "bAZTn",
+              "name": "cta",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 135,
+                "size": {
+                  "height": 1.2
+                },
+                "colors": [
+                  {
+                    "color": "#22D3EE",
+                    "position": 0
+                  },
+                  {
+                    "color": "#0EA5E9",
+                    "position": 0.25
+                  },
+                  {
+                    "color": "#0066FF",
+                    "position": 0.75
+                  },
+                  {
+                    "color": "#3B82F6",
+                    "position": 0.5
+                  },
+                  {
+                    "color": "#4F46E5",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": "$rounded-full",
+              "gap": 8,
+              "padding": [
+                14,
+                28
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "kCQ8k",
+                  "fill": "#FFFFFF",
+                  "content": "Get in touch",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "X4lPA",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "arrow-right",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                }
+              ]
             }
           ]
         },
@@ -566,46 +660,42 @@
             {
               "type": "text",
               "id": "EGWug",
-              "fill": "$foreground-primary",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 135,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#22D3EE",
+                    "position": 0
+                  },
+                  {
+                    "color": "#0EA5E9",
+                    "position": 0.25
+                  },
+                  {
+                    "color": "#0066FF",
+                    "position": 0.5
+                  },
+                  {
+                    "color": "#3B82F6",
+                    "position": 0.75
+                  },
+                  {
+                    "color": "#4F46E5",
+                    "position": 1
+                  }
+                ]
+              },
               "content": "What I bring",
               "lineHeight": 1.15,
               "fontFamily": "$font-headings",
               "fontSize": 48,
-              "fontWeight": "600"
-            },
-            {
-              "type": "frame",
-              "id": "bAZTn",
-              "name": "cta",
-              "fill": "$accent-primary",
-              "cornerRadius": "$rounded-full",
-              "gap": 8,
-              "padding": [
-                14,
-                28
-              ],
-              "justifyContent": "center",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "kCQ8k",
-                  "fill": "#FFFFFF",
-                  "content": "Get in touch",
-                  "fontFamily": "$font-body",
-                  "fontSize": 15,
-                  "fontWeight": "600"
-                },
-                {
-                  "type": "icon_font",
-                  "id": "X4lPA",
-                  "width": 16,
-                  "height": 16,
-                  "iconFontName": "arrow-right",
-                  "iconFontFamily": "lucide",
-                  "fill": "#FFFFFF"
-                }
-              ]
+              "fontWeight": "700"
             },
             {
               "type": "frame",
@@ -630,7 +720,25 @@
                       "name": "icon1",
                       "width": 48,
                       "height": 48,
-                      "fill": "#F4F4F4",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 135,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#DBEAFE",
+                            "position": 0
+                          },
+                          {
+                            "color": "#BFDBFE",
+                            "position": 1
+                          }
+                        ]
+                      },
                       "cornerRadius": "$rounded-xl",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -642,7 +750,7 @@
                           "height": 22,
                           "iconFontName": "code",
                           "iconFontFamily": "lucide",
-                          "fill": "$foreground-primary"
+                          "fill": "#2563EB"
                         }
                       ]
                     },
@@ -656,7 +764,7 @@
                       "textAlign": "center",
                       "fontFamily": "$font-headings",
                       "fontSize": 14,
-                      "fontWeight": "600"
+                      "fontWeight": "700"
                     },
                     {
                       "type": "text",
@@ -668,7 +776,7 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "$font-captions",
-                      "fontSize": 12,
+                      "fontSize": 14,
                       "fontWeight": "normal"
                     }
                   ]
@@ -688,7 +796,25 @@
                       "name": "icon2",
                       "width": 48,
                       "height": 48,
-                      "fill": "#F4F4F4",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 135,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#DBEAFE",
+                            "position": 0
+                          },
+                          {
+                            "color": "#BFDBFE",
+                            "position": 1
+                          }
+                        ]
+                      },
                       "cornerRadius": "$rounded-xl",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -700,7 +826,7 @@
                           "height": 22,
                           "iconFontName": "layers",
                           "iconFontFamily": "lucide",
-                          "fill": "$foreground-primary"
+                          "fill": "#0066FF"
                         }
                       ]
                     },
@@ -714,7 +840,7 @@
                       "textAlign": "center",
                       "fontFamily": "$font-headings",
                       "fontSize": 14,
-                      "fontWeight": "600"
+                      "fontWeight": "700"
                     },
                     {
                       "type": "text",
@@ -726,7 +852,7 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "$font-captions",
-                      "fontSize": 12,
+                      "fontSize": 14,
                       "fontWeight": "normal"
                     }
                   ]
@@ -746,7 +872,25 @@
                       "name": "icon3",
                       "width": 48,
                       "height": 48,
-                      "fill": "#F4F4F4",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 135,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#E0E7FF",
+                            "position": 0
+                          },
+                          {
+                            "color": "#C7D2FE",
+                            "position": 1
+                          }
+                        ]
+                      },
                       "cornerRadius": "$rounded-xl",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -758,7 +902,7 @@
                           "height": 22,
                           "iconFontName": "zap",
                           "iconFontFamily": "lucide",
-                          "fill": "$foreground-primary"
+                          "fill": "#4F46E5"
                         }
                       ]
                     },
@@ -772,7 +916,7 @@
                       "textAlign": "center",
                       "fontFamily": "$font-headings",
                       "fontSize": 14,
-                      "fontWeight": "600"
+                      "fontWeight": "700"
                     },
                     {
                       "type": "text",
@@ -784,7 +928,7 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "$font-captions",
-                      "fontSize": 12,
+                      "fontSize": 14,
                       "fontWeight": "normal"
                     }
                   ]
@@ -804,7 +948,25 @@
                       "name": "icon4",
                       "width": 48,
                       "height": 48,
-                      "fill": "#F4F4F4",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 135,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#EDE9FE",
+                            "position": 0
+                          },
+                          {
+                            "color": "#DDD6FE",
+                            "position": 1
+                          }
+                        ]
+                      },
                       "cornerRadius": "$rounded-xl",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -816,7 +978,7 @@
                           "height": 22,
                           "iconFontName": "users",
                           "iconFontFamily": "lucide",
-                          "fill": "$foreground-primary"
+                          "fill": "#7C3AED"
                         }
                       ]
                     },
@@ -830,7 +992,7 @@
                       "textAlign": "center",
                       "fontFamily": "$font-headings",
                       "fontSize": 14,
-                      "fontWeight": "600"
+                      "fontWeight": "700"
                     },
                     {
                       "type": "text",
@@ -842,7 +1004,7 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "$font-captions",
-                      "fontSize": 12,
+                      "fontSize": 14,
                       "fontWeight": "normal"
                     }
                   ]
