@@ -1,22 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useLanguage } from "@/hooks/useLanguage";
+import { selectLocale, setLocale, useLanguageStore } from "@/store/useLanguageStore";
 import { LOCALES, type Locale } from "@/lib/i18n/translations";
 import { cn } from "@/lib/utils";
 
+const PADDING = 4;
+const BUTTON_W = 32;
+
 export function LanguageSwitch({ className }: { className?: string }) {
-  const { locale, setLocale } = useLanguage();
+  const locale = useLanguageStore(selectLocale);
+  const activeIndex = LOCALES.findIndex((l) => l.code === locale);
 
   return (
     <div
       className={cn(
-        "relative flex items-center rounded-full border border-[var(--color-border-subtle)] bg-[var(--color-surface-elevated)] p-1",
+        "relative flex items-center rounded-full border border-[var(--color-border-subtle)] bg-[var(--color-surface-elevated)]",
         className,
       )}
       role="tablist"
       aria-label="Language"
+      style={{ padding: PADDING }}
     >
+      <motion.span
+        aria-hidden
+        className="absolute rounded-full bg-[var(--color-foreground-primary)] pointer-events-none"
+        initial={false}
+        animate={{ x: activeIndex * BUTTON_W }}
+        style={{
+          left: PADDING,
+          top: PADDING,
+          bottom: PADDING,
+          width: BUTTON_W,
+        }}
+        transition={{ type: "spring", stiffness: 360, damping: 32, mass: 0.6 }}
+      />
       {LOCALES.map((option) => {
         const active = option.code === locale;
         return (
@@ -26,21 +44,15 @@ export function LanguageSwitch({ className }: { className?: string }) {
             role="tab"
             aria-selected={active}
             onClick={() => setLocale(option.code as Locale)}
+            style={{ width: BUTTON_W }}
             className={cn(
-              "relative z-10 flex h-7 min-w-[36px] cursor-pointer items-center justify-center rounded-full px-2.5 font-captions text-[11px] font-semibold tracking-wide transition-colors",
+              "relative z-10 flex h-7 shrink-0 cursor-pointer items-center justify-center rounded-full font-captions text-[11px] font-semibold tracking-wide transition-colors",
               active
                 ? "text-[var(--color-surface)]"
                 : "text-[var(--color-foreground-secondary)] hover:text-[var(--color-foreground-primary)]",
             )}
           >
-            {active ? (
-              <motion.span
-                layoutId="lang-pill"
-                className="absolute inset-0 rounded-full bg-[var(--color-foreground-primary)]"
-                transition={{ type: "spring", stiffness: 320, damping: 28 }}
-              />
-            ) : null}
-            <span className="relative">{option.label}</span>
+            {option.label}
           </button>
         );
       })}

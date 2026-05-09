@@ -2,18 +2,26 @@
 
 import { motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
-import { MouseEvent } from "react";
-import { useTheme } from "@/hooks/useTheme";
+import { MouseEvent, useEffect } from "react";
+import {
+  markThemeHydrated,
+  selectTheme,
+  toggleTheme,
+  useThemeStore,
+} from "@/store/useThemeStore";
 import { cn } from "@/lib/utils";
 
 export function ThemeToggle({ className }: { className?: string }) {
-  const { theme, toggleTheme, mounted } = useTheme();
+  const theme = useThemeStore(selectTheme);
+  const isDark = theme === "dark";
+
+  useEffect(() => {
+    markThemeHydrated();
+  }, []);
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     toggleTheme({ x: e.clientX, y: e.clientY });
   };
-
-  const isDark = mounted && theme === "dark";
 
   return (
     <button
@@ -27,11 +35,11 @@ export function ThemeToggle({ className }: { className?: string }) {
       )}
     >
       <motion.span
-        layout
-        layoutId="theme-toggle-pill"
-        className="absolute inset-y-1 w-7 rounded-full bg-[var(--color-foreground-primary)]"
-        style={{ left: isDark ? "calc(100% - 1.875rem)" : "0.25rem" }}
-        transition={{ type: "spring", stiffness: 320, damping: 28 }}
+        aria-hidden
+        className="absolute top-1 left-1 h-7 w-7 rounded-full bg-[var(--color-foreground-primary)] pointer-events-none"
+        initial={false}
+        animate={{ x: isDark ? 28 : 0 }}
+        transition={{ type: "spring", stiffness: 360, damping: 32, mass: 0.6 }}
       />
       <span
         className={cn(
