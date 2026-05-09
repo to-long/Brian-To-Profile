@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Inter, Funnel_Sans } from "next/font/google";
-import { LanguageProvider } from "@/components/providers/LanguageProvider";
+import { IntlProvider } from "@/components/providers/IntlProvider";
 import "./globals.css";
 
 const geist = Geist({
@@ -24,12 +24,30 @@ export const metadata: Metadata = {
     "15 years building high-scale products, leading cross-border teams, and turning complex systems into clean, performant experiences.",
 };
 
+// Apply theme class BEFORE React hydrates so there's no flash of wrong theme.
+// Also migrates pre-zustand storage format (plain string -> { state: { ... } }).
 const themeInitScript = `
 (function() {
   try {
-    var stored = localStorage.getItem('brian-to-theme');
-    var prefers = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    var theme = stored === 'dark' || stored === 'light' ? stored : prefers;
+    function migrateKey(key, prop) {
+      var raw = localStorage.getItem(key);
+      if (!raw) return undefined;
+      try {
+        var parsed = JSON.parse(raw);
+        if (parsed && parsed.state && typeof parsed.state[prop] === 'string') return parsed.state[prop];
+      } catch (e) {
+        if (typeof raw === 'string' && raw.length < 32) {
+          try { localStorage.setItem(key, JSON.stringify({ state: { [prop]: raw }, version: 0 })); } catch (e2) {}
+          return raw;
+        }
+      }
+      return undefined;
+    }
+    migrateKey('brian-to-locale', 'locale');
+    var theme = migrateKey('brian-to-theme', 'theme');
+    if (theme !== 'dark' && theme !== 'light') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
     if (theme === 'dark') document.documentElement.classList.add('dark');
   } catch (e) {}
 })();`;
@@ -47,7 +65,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-full">
-        <LanguageProvider>{children}</LanguageProvider>
+        <IntlProvider>{children}</IntlProvider>
       </body>
     </html>
   );
