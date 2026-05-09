@@ -6383,6 +6383,7 @@
           "type": "frame",
           "id": "L9ZcT",
           "name": "mobTrust",
+          "rotation": 0.2838962498522577,
           "width": "fill_container",
           "layout": "vertical",
           "gap": 16,
