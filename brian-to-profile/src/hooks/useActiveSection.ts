@@ -9,7 +9,19 @@ export function useActiveSection(ids: readonly string[], offset = 96) {
     if (typeof window === "undefined") return;
     if (ids.length === 0) return;
 
-    const onScroll = () => {
+    let frame = 0;
+
+    const compute = () => {
+      frame = 0;
+      const docHeight = document.documentElement.scrollHeight;
+      const winHeight = window.innerHeight;
+      const atBottom = window.scrollY + winHeight >= docHeight - 4;
+
+      if (atBottom) {
+        setActive(ids[ids.length - 1]);
+        return;
+      }
+
       const scrollY = window.scrollY + offset + 1;
       let current = ids[0];
       for (const id of ids) {
@@ -22,9 +34,17 @@ export function useActiveSection(ids: readonly string[], offset = 96) {
       setActive(current);
     };
 
-    onScroll();
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(compute);
+    };
+
+    compute();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, [ids, offset]);
 
   return active;

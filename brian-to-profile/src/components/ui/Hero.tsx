@@ -3,11 +3,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useRef } from "react";
-import { useLanguage } from "@/hooks/useLanguage";
 
 export function Hero() {
-  const { t } = useLanguage();
+  const t = useTranslations("hero");
   const ref = useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -57,7 +57,7 @@ export function Hero() {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="mb-3 font-captions text-xs font-medium tracking-[0.2em] text-[var(--color-foreground-secondary)] md:text-[13px]"
       >
-        {t.hero.caption}
+        {t("caption")}
       </motion.p>
 
       <motion.h1
@@ -73,9 +73,9 @@ export function Hero() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.45 }}
-        className="mb-8 max-w-[600px] whitespace-pre-line px-4 text-center text-base leading-relaxed text-[var(--color-foreground-secondary)] md:text-lg"
+        className="mb-8 max-w-[600px] whitespace-pre-line px-4 text-center text-base leading-relaxed text-[var(--color-foreground-secondary)] [text-wrap:balance] md:text-lg"
       >
-        {t.hero.tagline}
+        {t("tagline")}
       </motion.p>
 
       <motion.a
@@ -85,9 +85,13 @@ export function Hero() {
         transition={{ duration: 0.7, delay: 0.6 }}
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.98 }}
-        className="group inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[var(--color-accent)]/25 transition-shadow hover:shadow-[var(--color-accent)]/40"
+        style={{
+          backgroundImage:
+            "linear-gradient(135deg, #22D3EE 0%, #0EA5E9 25%, #3B82F6 50%, #0066FF 75%, #4F46E5 100%)",
+        }}
+        className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white opacity-90 shadow-lg shadow-[#4F46E5]/30 transition hover:opacity-100 hover:shadow-xl hover:shadow-[#4F46E5]/45"
       >
-        {t.hero.cta}
+        {t("cta")}
         <motion.span
           className="inline-block"
           whileHover={{ x: 3 }}

@@ -15,7 +15,7 @@ export default function HomePage() {
     <>
       <ScrollProgress />
       <Nav />
-      <main className="mx-auto flex max-w-7xl flex-col gap-12 md:gap-20">
+      <main className="mx-auto flex max-w-7xl flex-col gap-12 md:gap-24">
         <Hero />
         <TrustBar />
         <Features />

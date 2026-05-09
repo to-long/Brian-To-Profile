@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { CONTACT } from "@/data/portfolio";
-import { useLanguage } from "@/hooks/useLanguage";
 import { Reveal } from "@/components/animations/Reveal";
 import { cn } from "@/lib/utils";
 
@@ -23,7 +23,7 @@ function LinkedinIcon({ size = 16, className }: { size?: number; className?: str
 }
 
 export function Footer() {
-  const { t } = useLanguage();
+  const t = useTranslations("contact");
 
   type Column = {
     icon: (props: { size?: number; className?: string }) => React.ReactElement;
@@ -36,26 +36,26 @@ export function Footer() {
   const columns: Column[] = [
     {
       icon: ({ size, className }) => <Mail size={size} className={className} />,
-      label: t.contact.labels.email,
+      label: t("labels.email"),
       value: CONTACT.email,
       href: `mailto:${CONTACT.email}`,
     },
     {
       icon: ({ size, className }) => <Phone size={size} className={className} />,
-      label: t.contact.labels.phone,
+      label: t("labels.phone"),
       value: CONTACT.phone,
       href: `tel:${CONTACT.phone.replace(/[^+0-9]/g, "")}`,
     },
     {
       icon: LinkedinIcon,
-      label: t.contact.labels.linkedin,
+      label: t("labels.linkedin"),
       value: CONTACT.linkedinLabel,
       href: CONTACT.linkedin,
       accent: true,
     },
     {
       icon: ({ size, className }) => <MapPin size={size} className={className} />,
-      label: t.contact.labels.location,
+      label: t("labels.location"),
       value: CONTACT.location,
     },
   ];
@@ -63,44 +63,66 @@ export function Footer() {
   return (
     <footer id="contact" className="flex flex-col items-center gap-10 py-20">
       <Reveal>
-        <h2 className="text-center font-headings text-4xl font-semibold md:text-5xl">
-          {t.contact.heading}
+        <h2 className="gradient-heading px-6 text-center font-headings text-4xl font-bold md:text-5xl">
+          {t("heading")}
         </h2>
       </Reveal>
 
       <Reveal delay={0.1}>
         <p className="max-w-xl px-6 text-center text-[var(--color-foreground-secondary)] md:text-base">
-          {t.contact.subheading}
+          {t("subheading")}
         </p>
       </Reveal>
 
       <Reveal delay={0.2}>
-        <div className="grid w-full max-w-5xl grid-cols-1 gap-x-6 gap-y-8 px-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid w-full max-w-5xl grid-cols-1 gap-3 px-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 md:grid-cols-4">
           {columns.map(({ icon: Icon, label, value, href, accent }) => {
-            const inner = (
-              <div className="flex flex-col items-start gap-2 text-left">
-                <span className="font-captions text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-foreground-muted)]">
-                  {label}
+            const mobile = (
+              <span className="flex w-full items-center gap-2.5 rounded-xl bg-[color-mix(in_srgb,var(--color-foreground-primary)_4%,transparent)] px-3.5 py-3.5 text-[13px] sm:hidden">
+                <Icon
+                  size={16}
+                  className={
+                    accent
+                      ? "text-[var(--color-accent)]"
+                      : "text-[var(--color-foreground-secondary)]"
+                  }
+                />
+                <span
+                  className={cn(
+                    "min-w-0 flex-1 truncate",
+                    accent
+                      ? "text-[var(--color-accent)]"
+                      : "text-[var(--color-foreground-primary)]",
+                  )}
+                  title={value}
+                >
+                  {value}
                 </span>
-                <span className="flex items-center gap-2">
+              </span>
+            );
+            const desktop = (
+              <div className="hidden min-w-0 flex-col items-start gap-2 text-left sm:flex">
+                <span className="flex items-center gap-1.5 font-captions text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-foreground-muted)]">
                   <Icon
-                    size={16}
+                    size={12}
                     className={
                       accent
                         ? "text-[var(--color-accent)]"
-                        : "text-[var(--color-foreground-secondary)]"
+                        : "text-[var(--color-foreground-muted)]"
                     }
                   />
-                  <span
-                    className={cn(
-                      "text-sm break-all",
-                      accent
-                        ? "text-[var(--color-accent)]"
-                        : "text-[var(--color-foreground-primary)]",
-                    )}
-                  >
-                    {value}
-                  </span>
+                  {label}
+                </span>
+                <span
+                  title={value}
+                  className={cn(
+                    "block w-full truncate text-sm",
+                    accent
+                      ? "text-[var(--color-accent)]"
+                      : "text-[var(--color-foreground-primary)]",
+                  )}
+                >
+                  {value}
                 </span>
               </div>
             );
@@ -112,12 +134,16 @@ export function Footer() {
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 whileHover={{ y: -3 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="block"
+                className="block w-full"
               >
-                {inner}
+                {mobile}
+                {desktop}
               </motion.a>
             ) : (
-              <div key={label}>{inner}</div>
+              <div key={label} className="w-full">
+                {mobile}
+                {desktop}
+              </div>
             );
           })}
         </div>
@@ -125,11 +151,11 @@ export function Footer() {
 
       <div className="mt-6 w-full max-w-5xl border-t border-[var(--color-border-subtle)] pt-6">
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 px-6 font-captions text-xs tracking-wide text-[var(--color-foreground-secondary)]">
-          <span>{t.contact.education}</span>
+          <span>{t("education")}</span>
           <span aria-hidden>·</span>
-          <span>{t.contact.award1}</span>
+          <span>{t("award1")}</span>
           <span aria-hidden>·</span>
-          <span>{t.contact.award2}</span>
+          <span>{t("award2")}</span>
         </div>
       </div>
     </footer>

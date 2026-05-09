@@ -27,7 +27,7 @@ export function Reveal({ children, delay = 0, className, as = "div" }: RevealPro
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, amount: 0.05 }}
       variants={variants}
       transition={{ delay }}
     >
@@ -58,7 +58,7 @@ export function StaggerGroup({ children, className }: { children: ReactNode; cla
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, amount: 0.05 }}
       variants={staggerContainer}
     >
       {children}

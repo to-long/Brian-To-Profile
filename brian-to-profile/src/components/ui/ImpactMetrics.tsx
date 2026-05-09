@@ -1,9 +1,9 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { METRICS } from "@/data/portfolio";
-import { useLanguage } from "@/hooks/useLanguage";
 import { Reveal } from "@/components/animations/Reveal";
 
 function CountValue({ value }: { value: string }) {
@@ -41,12 +41,12 @@ function CountValue({ value }: { value: string }) {
 }
 
 export function ImpactMetrics() {
-  const { t } = useLanguage();
+  const t = useTranslations("metrics");
   return (
     <section className="flex flex-col items-center gap-12 py-16">
       <Reveal>
-        <h2 className="text-center font-headings text-4xl font-semibold md:text-5xl">
-          {t.metrics.heading}
+        <h2 className="gradient-heading px-6 text-center font-headings text-4xl font-bold md:text-5xl">
+          {t("heading")}
         </h2>
       </Reveal>
       <div className="grid w-full max-w-5xl grid-cols-1 gap-4 px-6 md:grid-cols-3 md:gap-6">
@@ -57,14 +57,15 @@ export function ImpactMetrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -4 }}
-            className="group flex flex-col items-center gap-3 rounded-2xl border border-[var(--color-border-subtle)] p-8 text-center transition-shadow hover:shadow-lg hover:shadow-black/5"
+            whileHover={{ y: -8, transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] } }}
+            className="group relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] p-8 text-center [transition:box-shadow_280ms_ease-out,border-color_280ms_ease-out] hover:border-[var(--color-accent)]/40 hover:shadow-xl hover:shadow-black/10 will-change-transform"
           >
+            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-transparent via-transparent to-[color-mix(in_srgb,var(--color-accent)_8%,transparent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <span className="font-headings text-5xl font-bold leading-none text-[var(--color-accent)] md:text-6xl">
               <CountValue value={m.value} />
             </span>
             <p className="text-sm leading-relaxed text-[var(--color-foreground-secondary)]">
-              {m.description}
+              {t(`items.${i}`)}
             </p>
           </motion.div>
         ))}
