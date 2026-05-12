@@ -135,11 +135,20 @@ export const PROJECTS: Project[] = [
   {
     company: "Money Forward",
     tagColor: "blue",
-    year: "2024",
+    year: "2025",
     title: "Accounting GPT",
     description:
       "AI assistant published on the GPT Store. Analyzes accounting statements and auto-generates reports for finance teams.",
     tech: "ChatGPT · Qdrant · RAG",
+  },
+  {
+    company: "Money Forward",
+    tagColor: "blue",
+    year: "2024",
+    title: "AI Help Assistant",
+    description:
+      "In-product RAG chatbot answering user questions in real time. Drove documentation efficiency and UX improvements.",
+    tech: "LangChain · Qdrant · Claude",
   },
   {
     company: "Money Forward",
@@ -151,13 +160,13 @@ export const PROJECTS: Project[] = [
     tech: "Rsbuild · Module Federation · React",
   },
   {
-    company: "Money Forward",
-    tagColor: "blue",
-    year: "2023",
-    title: "AI Help Assistant",
+    company: "Crossian",
+    tagColor: "orange",
+    year: "2021",
+    title: "Real-Time Shipping Integration",
     description:
-      "In-product RAG chatbot answering user questions in real time. Drove documentation efficiency and UX improvements.",
-    tech: "LangChain · Qdrant · Claude",
+      "Deep API integration with major shipping providers. Reduced lost/wrong packages and minimized PayPal disputes.",
+    tech: "Node.js · Redis · GraphQL",
   },
   {
     company: "Crossian",
@@ -167,15 +176,6 @@ export const PROJECTS: Project[] = [
     description:
       "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders.",
     tech: "Kafka · MongoDB · NestJS · Next.js",
-  },
-  {
-    company: "Crossian",
-    tagColor: "orange",
-    year: "2021",
-    title: "Real-Time Shipping Integration",
-    description:
-      "Deep API integration with major shipping providers. Reduced lost/wrong packages and minimized PayPal disputes.",
-    tech: "Node.js · Redis · GraphQL",
   },
   {
     company: "Niteco",
@@ -224,6 +224,79 @@ export const TECH_STACK: TechCategory[] = [
     icon: Database,
     title: "Database",
     items: "PostgreSQL · MongoDB · Redis\nKafka · ElasticSearch · Firebase",
+  },
+];
+
+export type SideProjectTagColor = "purple" | "blue" | "green";
+
+export type SideProject = {
+  tag: string;
+  tagColor: SideProjectTagColor;
+  year: string;
+  title: string;
+  description: string;
+  tech: string;
+  url?: string;
+};
+
+export const SIDE_PROJECTS: SideProject[] = [
+  {
+    tag: "Personal",
+    tagColor: "purple",
+    year: "2026",
+    title: "brian-to.dev",
+    description:
+      "This very portfolio. Built to play with the latest Next.js, framer-motion layout primitives, and Zustand patterns.",
+    tech: "Next.js · Tailwind v4 · next-intl",
+    url: "https://brian-to.dev",
+  },
+  {
+    tag: "Freelance",
+    tagColor: "green",
+    year: "2025",
+    title: "GFTPay",
+    description:
+      "DeFi payment gateway — Stripe + blockchain integration with idempotent webhook handling, multi-currency swaps, and on-chain subscription billing.",
+    tech: "Solidity · Stripe · TypeScript · Web3.js",
+  },
+  {
+    tag: "Freelance",
+    tagColor: "green",
+    year: "2024",
+    title: "ImpactCocoa",
+    description:
+      "Farm-to-bar traceability for sustainable cocoa. Tracks each batch from co-op to chocolate maker; permissions + audit trail for buyers.",
+    tech: "React · Node.js · PostgreSQL · GraphQL",
+  },
+  {
+    tag: "Freelance",
+    tagColor: "green",
+    year: "2023",
+    title: "topastravel.vn",
+    description:
+      "Travel website — tour booking, destination guides, and itinerary planning for Vietnamese travelers.",
+    tech: "Next.js · Tailwind · Vercel",
+    url: "https://topastravel.vn",
+  },
+  {
+    tag: "Freelance",
+    tagColor: "green",
+    year: "2022",
+    title: "dutchandco.nl",
+    description:
+      "Renewable energy company website — solar panel configurator, energy savings calculator, and consultation booking.",
+    tech: "Vue.js · Nuxt · SCSS · Strapi CMS",
+    url: "https://dutchandco.nl",
+  },
+  {
+    tag: "Personal",
+    tagColor: "purple",
+    year: "2016",
+    title: "ybox.vn",
+    description:
+      "Social network for Vietnamese students — career board, skill-sharing groups, and community forums for early-career talent.",
+    tech: "PHP · MySQL · jQuery",
+    url: "https://ybox.vn",
   },
 ];
 

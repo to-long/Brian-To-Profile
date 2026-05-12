@@ -4,8 +4,8 @@
     {
       "type": "frame",
       "id": "bi8Au",
-      "x": -923,
-      "y": -121,
+      "x": -676,
+      "y": 234,
       "name": "Frame",
       "clip": true,
       "width": 1440,
@@ -555,44 +555,80 @@
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "text",
-                      "id": "xCciR",
-                      "fill": "$foreground-secondary",
-                      "content": "MONEY FORWARD",
-                      "fontFamily": "$font-headings",
-                      "fontSize": 16,
-                      "fontWeight": "700",
-                      "letterSpacing": 2
+                      "type": "frame",
+                      "id": "G4PIOj",
+                      "name": "mf",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "hpKQ9",
+                          "fill": "$foreground-secondary",
+                          "content": "MONEY FORWARD",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 16,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
                     },
                     {
-                      "type": "text",
-                      "id": "N7AYJ6",
-                      "fill": "$foreground-secondary",
-                      "content": "CROSSIAN",
-                      "fontFamily": "$font-headings",
-                      "fontSize": 16,
-                      "fontWeight": "600",
-                      "letterSpacing": 1.5
+                      "type": "frame",
+                      "id": "g2MsDZ",
+                      "name": "cr",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "H1z9wD",
+                          "fill": "$foreground-secondary",
+                          "content": "CROSSIAN",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 16,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.5
+                        }
+                      ]
                     },
                     {
-                      "type": "text",
-                      "id": "iEHaa",
-                      "fill": "$foreground-secondary",
-                      "content": "NITECO",
-                      "fontFamily": "$font-headings",
-                      "fontSize": 16,
-                      "fontWeight": "500",
-                      "letterSpacing": 1.5
+                      "type": "frame",
+                      "id": "h1o7sl",
+                      "name": "ni",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "M468AK",
+                          "fill": "$foreground-secondary",
+                          "content": "NITECO",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 1.5
+                        }
+                      ]
                     },
                     {
-                      "type": "text",
-                      "id": "uro6j",
-                      "fill": "$foreground-secondary",
-                      "content": "FPT",
-                      "fontFamily": "$font-headings",
-                      "fontSize": 18,
-                      "fontWeight": "800",
-                      "letterSpacing": 1
+                      "type": "frame",
+                      "id": "yHqg0",
+                      "name": "fp",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "sXIHg",
+                          "fill": "$foreground-secondary",
+                          "content": "FPT",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 18,
+                          "fontWeight": "800",
+                          "letterSpacing": 1
+                        }
+                      ]
                     }
                   ]
                 },
@@ -605,42 +641,78 @@
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "text",
-                      "id": "nBlAx",
-                      "fill": "$foreground-secondary",
-                      "content": "ANDPAD",
-                      "fontFamily": "$font-headings",
-                      "fontSize": 16,
-                      "fontWeight": "700",
-                      "letterSpacing": 3
+                      "type": "frame",
+                      "id": "CMkIQ",
+                      "name": "an",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "m670ol",
+                          "fill": "$foreground-secondary",
+                          "content": "ANDPAD",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 16,
+                          "fontWeight": "700",
+                          "letterSpacing": 3
+                        }
+                      ]
                     },
                     {
-                      "type": "text",
-                      "id": "PdPkA",
-                      "fill": "$foreground-secondary",
-                      "content": "CBTW",
-                      "fontFamily": "$font-headings",
-                      "fontSize": 18,
-                      "fontWeight": "500",
-                      "letterSpacing": 1
+                      "type": "frame",
+                      "id": "xxk07",
+                      "name": "cb",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "jZ38F",
+                          "fill": "$foreground-secondary",
+                          "content": "CBTW",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 18,
+                          "fontWeight": "500",
+                          "letterSpacing": 1
+                        }
+                      ]
                     },
                     {
-                      "type": "text",
-                      "id": "jY5HV",
-                      "fill": "$foreground-secondary",
-                      "content": "VIETTEL",
-                      "fontFamily": "$font-headings",
-                      "fontSize": 18,
-                      "fontWeight": "600"
+                      "type": "frame",
+                      "id": "P9TCS9",
+                      "name": "vt",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "JUxbF",
+                          "fill": "$foreground-secondary",
+                          "content": "VIETTEL",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        }
+                      ]
                     },
                     {
-                      "type": "text",
-                      "id": "D2Qws1",
-                      "fill": "$foreground-secondary",
-                      "content": "VinGroup",
-                      "fontFamily": "$font-headings",
-                      "fontSize": 18,
-                      "fontWeight": "700"
+                      "type": "frame",
+                      "id": "lK35M",
+                      "name": "vg",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "gsMln",
+                          "fill": "$foreground-secondary",
+                          "content": "VinGroup",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 18,
+                          "fontWeight": "700"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -3083,7 +3155,7 @@
                           "type": "text",
                           "id": "ufbGU",
                           "fill": "$foreground-secondary",
-                          "content": "2024",
+                          "content": "2025",
                           "fontFamily": "$font-captions",
                           "fontSize": 11,
                           "fontWeight": "normal"
@@ -3117,6 +3189,96 @@
                       "name": "p1tech",
                       "fill": "$foreground-secondary",
                       "content": "ChatGPT · Qdrant · RAG",
+                      "fontFamily": "$font-captions",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DdORb",
+                  "name": "proj3",
+                  "width": "fill_container",
+                  "cornerRadius": "$rounded-xl",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$border-subtle"
+                  },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ZyUf6",
+                      "name": "p3head",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "TkMHL",
+                          "name": "p3tag",
+                          "fill": "#EAF2FF",
+                          "cornerRadius": "$rounded-full",
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "xA2pk",
+                              "fill": "$accent-primary",
+                              "content": "Money Forward",
+                              "fontFamily": "$font-captions",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 0.5
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "WpOJ5",
+                          "fill": "$foreground-secondary",
+                          "content": "2024",
+                          "fontFamily": "$font-captions",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "GEZus",
+                      "fill": "$foreground-primary",
+                      "content": "Accounting Chatbot",
+                      "fontFamily": "$font-headings",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xU5nn",
+                      "fill": "$foreground-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "In-product RAG chatbot answering user questions in real time. Drove documentation efficiency and UX improvements.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xUw4C",
+                      "fill": "$foreground-secondary",
+                      "content": "LangChain · Qdrant · Claude · Chatbot",
                       "fontFamily": "$font-captions",
                       "fontSize": 11,
                       "fontWeight": "500",
@@ -3213,96 +3375,6 @@
                       "letterSpacing": 0.5
                     }
                   ]
-                },
-                {
-                  "type": "frame",
-                  "id": "DdORb",
-                  "name": "proj3",
-                  "width": "fill_container",
-                  "cornerRadius": "$rounded-xl",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-subtle"
-                  },
-                  "layout": "vertical",
-                  "gap": 16,
-                  "padding": 32,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "ZyUf6",
-                      "name": "p3head",
-                      "width": "fill_container",
-                      "justifyContent": "space_between",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "TkMHL",
-                          "name": "p3tag",
-                          "fill": "#EAF2FF",
-                          "cornerRadius": "$rounded-full",
-                          "padding": [
-                            4,
-                            10
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "xA2pk",
-                              "fill": "$accent-primary",
-                              "content": "Money Forward",
-                              "fontFamily": "$font-captions",
-                              "fontSize": 10,
-                              "fontWeight": "600",
-                              "letterSpacing": 0.5
-                            }
-                          ]
-                        },
-                        {
-                          "type": "text",
-                          "id": "WpOJ5",
-                          "fill": "$foreground-secondary",
-                          "content": "2023",
-                          "fontFamily": "$font-captions",
-                          "fontSize": 11,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "id": "GEZus",
-                      "fill": "$foreground-primary",
-                      "content": "AI Help Assistant",
-                      "fontFamily": "$font-headings",
-                      "fontSize": 18,
-                      "fontWeight": "600"
-                    },
-                    {
-                      "type": "text",
-                      "id": "xU5nn",
-                      "fill": "$foreground-secondary",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "In-product RAG chatbot answering user questions in real time. Drove documentation efficiency and UX improvements.",
-                      "lineHeight": 1.6,
-                      "fontFamily": "$font-body",
-                      "fontSize": 13,
-                      "fontWeight": "normal"
-                    },
-                    {
-                      "type": "text",
-                      "id": "xUw4C",
-                      "fill": "$foreground-secondary",
-                      "content": "LangChain · Qdrant · Claude",
-                      "fontFamily": "$font-captions",
-                      "fontSize": 11,
-                      "fontWeight": "500",
-                      "letterSpacing": 0.5
-                    }
-                  ]
                 }
               ]
             },
@@ -3313,96 +3385,6 @@
               "width": "fill_container",
               "gap": 24,
               "children": [
-                {
-                  "type": "frame",
-                  "id": "efRsw",
-                  "name": "proj4",
-                  "width": "fill_container",
-                  "cornerRadius": "$rounded-xl",
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$border-subtle"
-                  },
-                  "layout": "vertical",
-                  "gap": 16,
-                  "padding": 32,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "c2t8T",
-                      "name": "p4head",
-                      "width": "fill_container",
-                      "justifyContent": "space_between",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "YBhK9",
-                          "name": "p4tag",
-                          "fill": "#FFF1E5",
-                          "cornerRadius": "$rounded-full",
-                          "padding": [
-                            4,
-                            10
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "kvpRX",
-                              "fill": "#B8530B",
-                              "content": "Crossian",
-                              "fontFamily": "$font-captions",
-                              "fontSize": 10,
-                              "fontWeight": "600",
-                              "letterSpacing": 0.5
-                            }
-                          ]
-                        },
-                        {
-                          "type": "text",
-                          "id": "w70jwG",
-                          "fill": "$foreground-secondary",
-                          "content": "2020",
-                          "fontFamily": "$font-captions",
-                          "fontSize": 11,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "id": "j9VXg",
-                      "fill": "$foreground-primary",
-                      "content": "Cross-Border Dropshipping Platform",
-                      "fontFamily": "$font-headings",
-                      "fontSize": 18,
-                      "fontWeight": "600"
-                    },
-                    {
-                      "type": "text",
-                      "id": "OdikA",
-                      "fill": "$foreground-secondary",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders.",
-                      "lineHeight": 1.6,
-                      "fontFamily": "$font-body",
-                      "fontSize": 13,
-                      "fontWeight": "normal"
-                    },
-                    {
-                      "type": "text",
-                      "id": "PlzXa",
-                      "fill": "$foreground-secondary",
-                      "content": "Kafka · MongoDB · NestJS · Next.js",
-                      "fontFamily": "$font-captions",
-                      "fontSize": 11,
-                      "fontWeight": "500",
-                      "letterSpacing": 0.5
-                    }
-                  ]
-                },
                 {
                   "type": "frame",
                   "id": "U3bWF",
@@ -3486,6 +3468,96 @@
                       "id": "HMVPq",
                       "fill": "$foreground-secondary",
                       "content": "Node.js · Redis · GraphQL",
+                      "fontFamily": "$font-captions",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "efRsw",
+                  "name": "proj4",
+                  "width": "fill_container",
+                  "cornerRadius": "$rounded-xl",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$border-subtle"
+                  },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "c2t8T",
+                      "name": "p4head",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "YBhK9",
+                          "name": "p4tag",
+                          "fill": "#FFF1E5",
+                          "cornerRadius": "$rounded-full",
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "kvpRX",
+                              "fill": "#B8530B",
+                              "content": "Crossian",
+                              "fontFamily": "$font-captions",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 0.5
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "w70jwG",
+                          "fill": "$foreground-secondary",
+                          "content": "2020",
+                          "fontFamily": "$font-captions",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "j9VXg",
+                      "fill": "$foreground-primary",
+                      "content": "Cross-Border Dropshipping Platform",
+                      "fontFamily": "$font-headings",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "OdikA",
+                      "fill": "$foreground-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "PlzXa",
+                      "fill": "$foreground-secondary",
+                      "content": "Kafka · MongoDB · NestJS · Next.js",
                       "fontFamily": "$font-captions",
                       "fontSize": 11,
                       "fontWeight": "500",
@@ -3580,6 +3652,605 @@
                       "fontSize": 11,
                       "fontWeight": "500",
                       "letterSpacing": 0.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "e4J6X",
+          "name": "sideProjects",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "oPMpQ",
+              "fill": "$foreground-primary",
+              "content": "Side projects",
+              "lineHeight": 1.15,
+              "fontFamily": "$font-headings",
+              "fontSize": 48,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "t5t6d",
+              "fill": "$foreground-secondary",
+              "content": "Things I build on weekends — just for fun and to learn new tools",
+              "fontFamily": "$font-body",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "Xyzzg",
+              "name": "sideRow",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "HoGbb",
+                  "name": "sideRow1",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "RNnmb",
+                      "name": "sp1",
+                      "width": "fill_container",
+                      "cornerRadius": "$rounded-xl",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$border-subtle"
+                      },
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Qyz1j",
+                          "name": "sp1h",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "AvH1P",
+                              "name": "sp1t",
+                              "fill": "#F3E8FF",
+                              "cornerRadius": "$rounded-full",
+                              "padding": [
+                                4,
+                                10
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "k1wCAV",
+                                  "fill": "#7C3AED",
+                                  "content": "Personal",
+                                  "fontFamily": "$font-captions",
+                                  "fontSize": 10,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.5
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "Dnsqg",
+                              "fill": "$foreground-secondary",
+                              "content": "2026",
+                              "fontFamily": "$font-captions",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "g8lgWn",
+                          "fill": "$foreground-primary",
+                          "content": "brian-to.dev",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Cj0K9",
+                          "fill": "$foreground-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "This very portfolio. Built to play with the latest Next.js, framer-motion layout primitives, and Zustand patterns.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "S9KoGb",
+                          "fill": "$foreground-secondary",
+                          "content": "Next.js · Tailwind v4 · Shadcn · Vercel",
+                          "fontFamily": "$font-captions",
+                          "fontSize": 11,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Snbtz",
+                      "name": "sp2",
+                      "width": "fill_container",
+                      "cornerRadius": "$rounded-xl",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$border-subtle"
+                      },
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "V2BsQH",
+                          "name": "sp2h",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "EjWXD",
+                              "name": "sp2t",
+                              "fill": "#D1FAE5",
+                              "cornerRadius": "$rounded-full",
+                              "padding": [
+                                4,
+                                10
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "l4TeZ",
+                                  "fill": "#047857",
+                                  "content": "Freelance",
+                                  "fontFamily": "$font-captions",
+                                  "fontSize": 10,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.5
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "BvEAB",
+                              "fill": "$foreground-secondary",
+                              "content": "2024",
+                              "fontFamily": "$font-captions",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "Z98PO",
+                          "fill": "$foreground-primary",
+                          "content": "GFT SwiftPay",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "q2a7tG",
+                          "fill": "$foreground-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "DeFi payment gateway — Stripe + blockchain integration with idempotent webhook handling, multi-currency swaps, and on-chain subscription billing.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "T4Uc0D",
+                          "fill": "$foreground-secondary",
+                          "content": "Solidity · Stripe · TypeScript · Web3.js",
+                          "fontFamily": "$font-captions",
+                          "fontSize": 11,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "l38vM",
+                      "name": "sp3",
+                      "width": "fill_container",
+                      "cornerRadius": "$rounded-xl",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$border-subtle"
+                      },
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "W0fdHc",
+                          "name": "sp3h",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "N4sfE",
+                              "name": "sp3t",
+                              "fill": "#D1FAE5",
+                              "cornerRadius": "$rounded-full",
+                              "padding": [
+                                4,
+                                10
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "s1buvo",
+                                  "fill": "#047857",
+                                  "content": "Freelance",
+                                  "fontFamily": "$font-captions",
+                                  "fontSize": 10,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.5
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "se6fr",
+                              "fill": "$foreground-secondary",
+                              "content": "2022",
+                              "fontFamily": "$font-captions",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "iPdAU",
+                          "fill": "$foreground-primary",
+                          "content": "ImpactCocoa",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "MjSQl",
+                          "fill": "$foreground-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Farm-to-bar traceability for sustainable cocoa. Tracks each batch from co-op to chocolate maker; permissions + audit trail for buyers.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "B5hXH",
+                          "fill": "$foreground-secondary",
+                          "content": "React · Node.js · PostgreSQL · AgriTech · SupplyChain",
+                          "fontFamily": "$font-captions",
+                          "fontSize": 11,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "y5OOFf",
+                  "name": "sideRow2",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "uwB4h",
+                      "name": "sp5",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "cornerRadius": "$rounded-xl",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$border-subtle"
+                      },
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "p3WLF",
+                          "name": "sp5h",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "lgG0q",
+                              "name": "sp5t",
+                              "fill": "#D1FAE5",
+                              "cornerRadius": "$rounded-full",
+                              "padding": [
+                                4,
+                                10
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "BUCc3",
+                                  "fill": "#047857",
+                                  "content": "Freelance",
+                                  "fontFamily": "$font-captions",
+                                  "fontSize": 10,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.5
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "q53BnR",
+                              "fill": "$foreground-secondary",
+                              "content": "2020",
+                              "fontFamily": "$font-captions",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "j1YPf",
+                          "fill": "$foreground-primary",
+                          "content": "topastravel.vn",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "m6GFjf",
+                          "fill": "$foreground-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Travel website — tour booking, destination guides, and itinerary planning for Vietnamese travelers.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "gNaQo",
+                          "fill": "$foreground-secondary",
+                          "content": "Next.js · Tailwind · Wordpress CMS",
+                          "fontFamily": "$font-captions",
+                          "fontSize": 11,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PK3SX",
+                      "name": "sp6",
+                      "width": "fill_container",
+                      "cornerRadius": "$rounded-xl",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$border-subtle"
+                      },
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "rorFk",
+                          "name": "sp5h",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "bkQ91",
+                              "name": "sp5t",
+                              "fill": "#D1FAE5",
+                              "cornerRadius": "$rounded-full",
+                              "padding": [
+                                4,
+                                10
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "n3vad",
+                                  "fill": "#047857",
+                                  "content": "Freelance",
+                                  "fontFamily": "$font-captions",
+                                  "fontSize": 10,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.5
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "Y4bRbQ",
+                              "fill": "$foreground-secondary",
+                              "content": "2018",
+                              "fontFamily": "$font-captions",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "TJS6a",
+                          "fill": "$foreground-primary",
+                          "content": "dutchandco.nl",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "kYF2t",
+                          "fill": "$foreground-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Renewable energy company website — solar panel configurator, energy savings calculator, and consultation booking.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "VUtOn",
+                          "fill": "$foreground-secondary",
+                          "content": "Next.js · Strapi CMS · Digital Ocean · Renewable energy ",
+                          "fontFamily": "$font-captions",
+                          "fontSize": 11,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "AMDhB",
+                      "name": "sp4",
+                      "width": "fill_container",
+                      "cornerRadius": "$rounded-xl",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$border-subtle"
+                      },
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "i4MU8",
+                          "name": "sp4h",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "vz47G",
+                              "name": "sp4t",
+                              "fill": "#F3E8FF",
+                              "cornerRadius": "$rounded-full",
+                              "padding": [
+                                4,
+                                10
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "FvuGr",
+                                  "fill": "#7C3AED",
+                                  "content": "Personal",
+                                  "fontFamily": "$font-captions",
+                                  "fontSize": 10,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.5
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "LKnVK",
+                              "fill": "$foreground-secondary",
+                              "content": "2016",
+                              "fontFamily": "$font-captions",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "Gc7At",
+                          "fill": "$foreground-primary",
+                          "content": "Ybox.vn",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "qOP2f",
+                          "fill": "$foreground-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Social network for Vietnamese students — career board, skill-sharing groups, and community forums for early-career talent.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "VdvaA",
+                          "fill": "$foreground-secondary",
+                          "content": "NodeJs · ReactJs · MySQL · Digital Ocean · Social Network",
+                          "fontFamily": "$font-captions",
+                          "fontSize": 11,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.5
+                        }
+                      ]
                     }
                   ]
                 }
@@ -6086,8 +6757,8 @@
     {
       "type": "frame",
       "id": "Iq6CY",
-      "x": -673,
-      "y": 5751,
+      "x": -708,
+      "y": 7015,
       "name": "Mobile",
       "clip": true,
       "width": 390,

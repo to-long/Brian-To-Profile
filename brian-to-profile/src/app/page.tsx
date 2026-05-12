@@ -6,6 +6,7 @@ import { DeviceCascade } from "@/components/ui/DeviceCascade";
 import { ImpactMetrics } from "@/components/ui/ImpactMetrics";
 import { CareerJourney } from "@/components/ui/CareerJourney";
 import { SelectedProjects } from "@/components/ui/SelectedProjects";
+import { SideProjects } from "@/components/ui/SideProjects";
 import { TechStack } from "@/components/ui/TechStack";
 import { Footer } from "@/components/ui/Footer";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
@@ -23,6 +24,7 @@ export default function HomePage() {
         <ImpactMetrics />
         <CareerJourney />
         <SelectedProjects />
+        <SideProjects />
         <TechStack />
         <Footer />
       </main>

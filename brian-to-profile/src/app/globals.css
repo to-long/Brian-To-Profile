@@ -17,6 +17,8 @@
   --color-tag-orange-fg: #b8530b;
   --color-tag-green: #eaf8ea;
   --color-tag-green-fg: #1f7a1f;
+  --color-tag-purple: #f3e8ff;
+  --color-tag-purple-fg: #7c3aed;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -42,6 +44,8 @@ html.dark {
   --color-tag-orange-fg: #fbbf24;
   --color-tag-green: #112d12;
   --color-tag-green-fg: #4ade80;
+  --color-tag-purple: #2d1a3e;
+  --color-tag-purple-fg: #c4b5fd;
 }
 
 html,

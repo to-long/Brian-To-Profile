@@ -95,19 +95,14 @@ export const translations = {
             "AI assistant published on the GPT Store. Analyzes accounting statements and auto-generates reports for finance teams.",
         },
         {
-          title: "Micro-FE Standardization",
-          description:
-            "Designed the Micro-FE framework adopted across the entire corporation. Earned the MFV Professional Award.",
-        },
-        {
           title: "AI Help Assistant",
           description:
             "In-product RAG chatbot answering user questions in real time. Drove documentation efficiency and UX improvements.",
         },
         {
-          title: "Cross-Border Dropshipping Platform",
+          title: "Micro-FE Standardization",
           description:
-            "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders.",
+            "Designed the Micro-FE framework adopted across the entire corporation. Earned the MFV Professional Award.",
         },
         {
           title: "Real-Time Shipping Integration",
@@ -115,9 +110,51 @@ export const translations = {
             "Deep API integration with major shipping providers. Reduced lost/wrong packages and minimized PayPal disputes.",
         },
         {
+          title: "Cross-Border Dropshipping Platform",
+          description:
+            "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders.",
+        },
+        {
           title: "Auth Microservice (Pub/Sub)",
           description:
             "High-performance authentication service shared across multiple European products. Built around RabbitMQ Pub/Sub.",
+        },
+      ],
+    },
+    sideProjects: {
+      heading: "Side projects",
+      subheading:
+        "Things I build on weekends — just for fun and to learn new tools",
+      items: [
+        {
+          title: "brian-to.dev",
+          description:
+            "This very portfolio. Built to play with the latest Next.js, framer-motion layout primitives, and Zustand patterns.",
+        },
+        {
+          title: "GFTPay",
+          description:
+            "DeFi payment gateway — Stripe + blockchain integration with idempotent webhook handling, multi-currency swaps, and on-chain subscription billing.",
+        },
+        {
+          title: "ImpactCocoa",
+          description:
+            "Farm-to-bar traceability for sustainable cocoa. Tracks each batch from co-op to chocolate maker; permissions + audit trail for buyers.",
+        },
+        {
+          title: "topastravel.vn",
+          description:
+            "Travel website — tour booking, destination guides, and itinerary planning for Vietnamese travelers.",
+        },
+        {
+          title: "dutchandco.nl",
+          description:
+            "Renewable energy company website — solar panel configurator, energy savings calculator, and consultation booking.",
+        },
+        {
+          title: "ybox.vn",
+          description:
+            "Social network for Vietnamese students — career board, skill-sharing groups, and community forums for early-career talent.",
         },
       ],
     },
@@ -225,19 +262,14 @@ export const translations = {
             "GPT Store で公開した AI アシスタント。会計帳票を解析し、財務チーム向けのレポートを自動生成。",
         },
         {
-          title: "Micro-FE 標準化",
-          description:
-            "全社採用された Micro-FE フレームワークを設計。MFV Professional Award を受賞。",
-        },
-        {
           title: "AI ヘルプアシスタント",
           description:
             "プロダクト内蔵の RAG チャットボットでユーザーの質問にリアルタイム回答。ドキュメント効率と UX を改善。",
         },
         {
-          title: "クロスボーダー ドロップシッピング基盤",
+          title: "Micro-FE 標準化",
           description:
-            "数百万ユーザーを支える基盤を設計。同時接続 3,500 → 30,000、日次 50,000 注文を処理。",
+            "全社採用された Micro-FE フレームワークを設計。MFV Professional Award を受賞。",
         },
         {
           title: "リアルタイム配送連携",
@@ -245,9 +277,50 @@ export const translations = {
             "主要配送業者の API と深く連携。紛失・誤配を削減し、PayPal の紛争を最小化。",
         },
         {
+          title: "クロスボーダー ドロップシッピング基盤",
+          description:
+            "数百万ユーザーを支える基盤を設計。同時接続 3,500 → 30,000、日次 50,000 注文を処理。",
+        },
+        {
           title: "認証マイクロサービス (Pub/Sub)",
           description:
             "複数の欧州プロダクトで共有する高性能な認証基盤。RabbitMQ Pub/Sub をベースに構築。",
+        },
+      ],
+    },
+    sideProjects: {
+      heading: "サイドプロジェクト",
+      subheading: "週末に趣味と学習のために作っているもの",
+      items: [
+        {
+          title: "brian-to.dev",
+          description:
+            "このポートフォリオサイト。最新の Next.js、framer-motion、Zustand を試すために構築。",
+        },
+        {
+          title: "GFTPay",
+          description:
+            "DeFi 決済ゲートウェイ — Stripe + ブロックチェーン連携、冪等な Webhook 処理、マルチ通貨スワップ、オンチェーンサブスクリプション課金。",
+        },
+        {
+          title: "ImpactCocoa",
+          description:
+            "サステナブルカカオの農場からチョコレートまでのトレーサビリティ。各バッチを協同組合から製造者まで追跡。",
+        },
+        {
+          title: "topastravel.vn",
+          description:
+            "旅行サイト — ツアー予約、目的地ガイド、ベトナム旅行者向けの旅程プランニング。",
+        },
+        {
+          title: "dutchandco.nl",
+          description:
+            "再生可能エネルギー企業サイト — ソーラーパネル構成、省エネ計算、コンサルティング予約。",
+        },
+        {
+          title: "ybox.vn",
+          description:
+            "ベトナムの学生向け SNS — キャリアボード、スキルシェアグループ、新卒向けコミュニティフォーラム。",
         },
       ],
     },

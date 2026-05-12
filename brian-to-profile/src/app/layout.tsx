@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   title: "Brian To — Principal Fullstack Engineer · Technical Leader",
   description:
     "15 years building high-scale products, leading cross-border teams, and turning complex systems into clean, performant experiences.",
+  icons: {
+    icon: "/btLogo.webp",
+    apple: "/btLogo.webp",
+  },
 };
 
 // Apply theme class BEFORE React hydrates so there's no flash of wrong theme.
