@@ -81,15 +81,18 @@ export function Hero() {
       <motion.a
         href="#contact"
         initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 0.9, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.6 }}
-        whileHover={{ scale: 1.04, opacity: 1 }}
-        whileTap={{ scale: 0.98 }}
+        animate={{ opacity: 0.9, y: 0, transition: { duration: 0.7, delay: 0.6 } }}
+        whileHover={{
+          scale: 1.04,
+          opacity: 1,
+          transition: { type: "spring", stiffness: 500, damping: 28 },
+        }}
+        whileTap={{ scale: 0.97, transition: { duration: 0.08 } }}
         style={{
           backgroundImage:
             "linear-gradient(135deg, #22D3EE 0%, #0EA5E9 25%, #3B82F6 50%, #0066FF 75%, #4F46E5 100%)",
         }}
-        className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#4F46E5]/30 [transition:box-shadow_300ms_ease] hover:shadow-xl hover:shadow-[#4F46E5]/45"
+        className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#4F46E5]/30 [transition:box-shadow_180ms_ease-out] hover:shadow-xl hover:shadow-[#4F46E5]/45"
       >
         {t("cta")}
         <motion.span
