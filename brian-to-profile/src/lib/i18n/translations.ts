@@ -71,7 +71,7 @@ export const translations = {
         {
           role: "Technical Leader · Founder Engineer",
           description:
-            "Scaled e-commerce platform 8x (3,500 to 30,000 concurrent users). Architected cross-border dropshipping system with Kafka for robust order processing serving millions of customers.",
+            "Scaled e-commerce platform 8x (3,500 to 30,000 concurrent users). Architected cross-border dropshipping system with Kafka for robust order processing. Built mobile app with React Native serving millions of customers.",
         },
         {
           role: "Fullstack Developer",
@@ -112,7 +112,7 @@ export const translations = {
         {
           title: "Cross-Border Dropshipping Platform",
           description:
-            "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders.",
+            "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders. Includes React Native mobile app.",
         },
         {
           title: "Auth Microservice (Pub/Sub)",
@@ -127,14 +127,14 @@ export const translations = {
         "Things I build on weekends — just for fun and to learn new tools",
       items: [
         {
-          title: "brian-to.dev",
+          title: "SwiftPay DeFi",
           description:
-            "This very portfolio. Built to play with the latest Next.js, framer-motion layout primitives, and Zustand patterns.",
+            "Decentralized payment gateway — on-chain multi-currency swaps, smart contract escrow, yield-bearing merchant vaults, and fiat off-ramp integration.",
         },
         {
-          title: "GFTPay",
+          title: "TMG Payments",
           description:
-            "DeFi payment gateway — Stripe + blockchain integration with idempotent webhook handling, multi-currency swaps, and on-chain subscription billing.",
+            "Payment processing platform for healthcare & automotive businesses — practice management integration, multi-channel payments, surcharge program, and POS terminal management.",
         },
         {
           title: "ImpactCocoa",
@@ -142,17 +142,17 @@ export const translations = {
             "Farm-to-bar traceability for sustainable cocoa. Tracks each batch from co-op to chocolate maker; permissions + audit trail for buyers.",
         },
         {
-          title: "topastravel.vn",
-          description:
-            "Travel website — tour booking, destination guides, and itinerary planning for Vietnamese travelers.",
-        },
-        {
           title: "dutchandco.nl",
           description:
             "Renewable energy company website — solar panel configurator, energy savings calculator, and consultation booking.",
         },
         {
-          title: "ybox.vn",
+          title: "Sunnypoint",
+          description:
+            "Cloud-based CRM and loyalty platform for beauty salons, restaurants, and retail shops in Japan — point card management, marketing automation, reservation system, mobile app, and multi-store analytics serving 2,500+ stores.",
+        },
+        {
+          title: "Ybox.vn",
           description:
             "Social network for Vietnamese students — career board, skill-sharing groups, and community forums for early-career talent.",
         },
@@ -238,7 +238,7 @@ export const translations = {
         {
           role: "テクニカルリーダー · ファウンダーエンジニア",
           description:
-            "EC プラットフォームを 8 倍にスケール（同時接続 3,500 → 30,000）。Kafka を用いたクロスボーダー・ドロップシッピング基盤を設計し、数百万の顧客を支える。",
+            "EC プラットフォームを 8 倍にスケール（同時接続 3,500 → 30,000）。Kafka を用いたクロスボーダー・ドロップシッピング基盤を設計。React Native モバイルアプリを構築し、数百万の顧客を支える。",
         },
         {
           role: "フルスタック開発者",
@@ -279,7 +279,7 @@ export const translations = {
         {
           title: "クロスボーダー ドロップシッピング基盤",
           description:
-            "数百万ユーザーを支える基盤を設計。同時接続 3,500 → 30,000、日次 50,000 注文を処理。",
+            "数百万ユーザーを支える基盤を設計。同時接続 3,500 → 30,000、日次 50,000 注文を処理。React Native モバイルアプリを含む。",
         },
         {
           title: "認証マイクロサービス (Pub/Sub)",
@@ -293,14 +293,14 @@ export const translations = {
       subheading: "週末に趣味と学習のために作っているもの",
       items: [
         {
-          title: "brian-to.dev",
+          title: "SwiftPay DeFi",
           description:
-            "このポートフォリオサイト。最新の Next.js、framer-motion、Zustand を試すために構築。",
+            "分散型決済ゲートウェイ — オンチェーン・マルチ通貨スワップ、スマートコントラクト・エスクロー、利回り付きマーチャントボールト、法定通貨オフランプ連携。",
         },
         {
-          title: "GFTPay",
+          title: "TMG Payments",
           description:
-            "DeFi 決済ゲートウェイ — Stripe + ブロックチェーン連携、冪等な Webhook 処理、マルチ通貨スワップ、オンチェーンサブスクリプション課金。",
+            "医療・自動車業界向け決済プラットフォーム — 管理ソフト連携、マルチチャネル決済、サーチャージプログラム、POS端末管理。",
         },
         {
           title: "ImpactCocoa",
@@ -308,17 +308,17 @@ export const translations = {
             "サステナブルカカオの農場からチョコレートまでのトレーサビリティ。各バッチを協同組合から製造者まで追跡。",
         },
         {
-          title: "topastravel.vn",
-          description:
-            "旅行サイト — ツアー予約、目的地ガイド、ベトナム旅行者向けの旅程プランニング。",
-        },
-        {
           title: "dutchandco.nl",
           description:
             "再生可能エネルギー企業サイト — ソーラーパネル構成、省エネ計算、コンサルティング予約。",
         },
         {
-          title: "ybox.vn",
+          title: "Sunnypoint",
+          description:
+            "美容院・飲食店・小売店向けクラウド型 CRM・ロイヤルティプラットフォーム — ポイントカード管理、マーケティング自動化、予約システム、モバイルアプリ、2,500店舗以上のマルチ店舗分析。",
+        },
+        {
+          title: "Ybox.vn",
           description:
             "ベトナムの学生向け SNS — キャリアボード、スキルシェアグループ、新卒向けコミュニティフォーラム。",
         },

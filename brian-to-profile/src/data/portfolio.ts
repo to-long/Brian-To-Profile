@@ -100,7 +100,7 @@ export const CAREER: CareerEntry[] = [
     company: "Crossian",
     role: "Technical Leader · Founder Engineer",
     description:
-      "Scaled e-commerce platform 8x (3,500 to 30,000 concurrent users). Architected cross-border dropshipping system with Kafka for robust order processing serving millions of customers.",
+      "Scaled e-commerce platform 8x (3,500 to 30,000 concurrent users). Architected cross-border dropshipping system with Kafka for robust order processing. Built mobile app with React Native serving millions of customers.",
   },
   {
     period: "2014 – 2019",
@@ -174,8 +174,8 @@ export const PROJECTS: Project[] = [
     year: "2020",
     title: "Cross-Border Dropshipping Platform",
     description:
-      "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders.",
-    tech: "Kafka · MongoDB · NestJS · Next.js",
+      "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders. Includes React Native mobile app.",
+    tech: "Kafka · MongoDB · NestJS · Next.js · React Native",
   },
   {
     company: "Niteco",
@@ -241,61 +241,61 @@ export type SideProject = {
 
 export const SIDE_PROJECTS: SideProject[] = [
   {
-    tag: "Personal",
-    tagColor: "purple",
+    tag: "Freelance",
+    tagColor: "green",
     year: "2026",
-    title: "brian-to.dev",
+    title: "SwiftPay DeFi",
     description:
-      "This very portfolio. Built to play with the latest Next.js, framer-motion layout primitives, and Zustand patterns.",
-    tech: "Next.js · Tailwind v4 · next-intl",
-    url: "https://brian-to.dev",
+      "Decentralized payment gateway — on-chain multi-currency swaps, smart contract escrow, yield-bearing merchant vaults, and fiat off-ramp integration.",
+    tech: "Solidity · Web3.js · React · Hardhat · EVM",
   },
   {
     tag: "Freelance",
     tagColor: "green",
     year: "2025",
-    title: "GFTPay",
+    title: "TMG Payments",
     description:
-      "DeFi payment gateway — Stripe + blockchain integration with idempotent webhook handling, multi-currency swaps, and on-chain subscription billing.",
-    tech: "Solidity · Stripe · TypeScript · Web3.js",
-  },
-  {
-    tag: "Freelance",
-    tagColor: "green",
-    year: "2024",
-    title: "ImpactCocoa",
-    description:
-      "Farm-to-bar traceability for sustainable cocoa. Tracks each batch from co-op to chocolate maker; permissions + audit trail for buyers.",
-    tech: "React · Node.js · PostgreSQL · GraphQL",
-  },
-  {
-    tag: "Freelance",
-    tagColor: "green",
-    year: "2023",
-    title: "topastravel.vn",
-    description:
-      "Travel website — tour booking, destination guides, and itinerary planning for Vietnamese travelers.",
-    tech: "Next.js · Tailwind · Vercel",
-    url: "https://topastravel.vn",
+      "Payment processing platform for healthcare & automotive businesses — practice management integration, multi-channel payments, surcharge program, and POS terminal management.",
+    tech: "NestJs · NextJs · Payment Gateway · POS Integration",
+    url: "https://tmgpayments.com",
   },
   {
     tag: "Freelance",
     tagColor: "green",
     year: "2022",
+    title: "ImpactCocoa",
+    description:
+      "Farm-to-bar traceability for sustainable cocoa. Tracks each batch from co-op to chocolate maker; permissions + audit trail for buyers.",
+    tech: "React · Node.js · PostgreSQL · AgriTech · SupplyChain",
+  },
+  {
+    tag: "Freelance",
+    tagColor: "green",
+    year: "2020",
     title: "dutchandco.nl",
     description:
       "Renewable energy company website — solar panel configurator, energy savings calculator, and consultation booking.",
-    tech: "Vue.js · Nuxt · SCSS · Strapi CMS",
+    tech: "Next.js · Strapi CMS · Digital Ocean · Renewable energy",
     url: "https://dutchandco.nl",
+  },
+  {
+    tag: "Freelance",
+    tagColor: "green",
+    year: "2018",
+    title: "Sunnypoint",
+    description:
+      "Cloud-based CRM and loyalty platform for beauty salons, restaurants, and retail shops in Japan — point card management, marketing automation, reservation system, mobile app, and multi-store analytics serving 2,500+ stores.",
+    tech: "Next.js · React Native · Java · MySQL · CRM · Loyalty",
+    url: "https://s.sunnypoint.jp",
   },
   {
     tag: "Personal",
     tagColor: "purple",
     year: "2016",
-    title: "ybox.vn",
+    title: "Ybox.vn",
     description:
       "Social network for Vietnamese students — career board, skill-sharing groups, and community forums for early-career talent.",
-    tech: "PHP · MySQL · jQuery",
+    tech: "NodeJs · ReactJs · MySQL · Digital Ocean · Social Network",
     url: "https://ybox.vn",
   },
 ];

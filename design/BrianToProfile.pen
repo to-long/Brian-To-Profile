@@ -4,8 +4,8 @@
     {
       "type": "frame",
       "id": "bi8Au",
-      "x": -676,
-      "y": 234,
+      "x": -654,
+      "y": 2050,
       "name": "Frame",
       "clip": true,
       "width": 1440,
@@ -3547,7 +3547,7 @@
                       "fill": "$foreground-secondary",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders.",
+                      "content": "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders. Includes React Native mobile app.",
                       "lineHeight": 1.6,
                       "fontFamily": "$font-body",
                       "fontSize": 13,
@@ -3557,7 +3557,7 @@
                       "type": "text",
                       "id": "PlzXa",
                       "fill": "$foreground-secondary",
-                      "content": "Kafka · MongoDB · NestJS · Next.js",
+                      "content": "Kafka · MongoDB · NestJS · Next.js · React Native",
                       "fontFamily": "$font-captions",
                       "fontSize": 11,
                       "fontWeight": "500",
@@ -3700,13 +3700,15 @@
                   "id": "HoGbb",
                   "name": "sideRow1",
                   "width": "fill_container",
+                  "height": "fit_content(253)",
                   "gap": 24,
                   "children": [
                     {
                       "type": "frame",
-                      "id": "RNnmb",
-                      "name": "sp1",
+                      "id": "uwB4h",
+                      "name": "sp5",
                       "width": "fill_container",
+                      "height": "fill_container",
                       "cornerRadius": "$rounded-xl",
                       "stroke": {
                         "align": "inside",
@@ -3719,17 +3721,17 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "Qyz1j",
-                          "name": "sp1h",
+                          "id": "p3WLF",
+                          "name": "sp5h",
                           "width": "fill_container",
                           "justifyContent": "space_between",
                           "alignItems": "center",
                           "children": [
                             {
                               "type": "frame",
-                              "id": "AvH1P",
-                              "name": "sp1t",
-                              "fill": "#F3E8FF",
+                              "id": "lgG0q",
+                              "name": "sp5t",
+                              "fill": "#D1FAE5",
                               "cornerRadius": "$rounded-full",
                               "padding": [
                                 4,
@@ -3738,9 +3740,9 @@
                               "children": [
                                 {
                                   "type": "text",
-                                  "id": "k1wCAV",
-                                  "fill": "#7C3AED",
-                                  "content": "Personal",
+                                  "id": "BUCc3",
+                                  "fill": "#047857",
+                                  "content": "Freelance",
                                   "fontFamily": "$font-captions",
                                   "fontSize": 10,
                                   "fontWeight": "600",
@@ -3750,7 +3752,7 @@
                             },
                             {
                               "type": "text",
-                              "id": "Dnsqg",
+                              "id": "q53BnR",
                               "fill": "$foreground-secondary",
                               "content": "2026",
                               "fontFamily": "$font-captions",
@@ -3761,20 +3763,20 @@
                         },
                         {
                           "type": "text",
-                          "id": "g8lgWn",
+                          "id": "j1YPf",
                           "fill": "$foreground-primary",
-                          "content": "brian-to.dev",
+                          "content": "SwiftPay DeFi",
                           "fontFamily": "$font-headings",
                           "fontSize": 18,
                           "fontWeight": "600"
                         },
                         {
                           "type": "text",
-                          "id": "Cj0K9",
+                          "id": "m6GFjf",
                           "fill": "$foreground-secondary",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "This very portfolio. Built to play with the latest Next.js, framer-motion layout primitives, and Zustand patterns.",
+                          "content": "Decentralized payment gateway — on-chain multi-currency swaps, smart contract escrow, yield-bearing merchant vaults, and fiat off-ramp integration.",
                           "lineHeight": 1.6,
                           "fontFamily": "$font-body",
                           "fontSize": 13,
@@ -3782,9 +3784,9 @@
                         },
                         {
                           "type": "text",
-                          "id": "S9KoGb",
+                          "id": "gNaQo",
                           "fill": "$foreground-secondary",
-                          "content": "Next.js · Tailwind v4 · Shadcn · Vercel",
+                          "content": "Solidity · Web3.js · React · Hardhat · EVM",
                           "fontFamily": "$font-captions",
                           "fontSize": 11,
                           "fontWeight": "500",
@@ -3797,6 +3799,7 @@
                       "id": "Snbtz",
                       "name": "sp2",
                       "width": "fill_container",
+                      "height": "fill_container",
                       "cornerRadius": "$rounded-xl",
                       "stroke": {
                         "align": "inside",
@@ -3842,7 +3845,7 @@
                               "type": "text",
                               "id": "BvEAB",
                               "fill": "$foreground-secondary",
-                              "content": "2024",
+                              "content": "2025",
                               "fontFamily": "$font-captions",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -3853,7 +3856,7 @@
                           "type": "text",
                           "id": "Z98PO",
                           "fill": "$foreground-primary",
-                          "content": "GFT SwiftPay",
+                          "content": "TMG Payments",
                           "fontFamily": "$font-headings",
                           "fontSize": 18,
                           "fontWeight": "600"
@@ -3864,7 +3867,7 @@
                           "fill": "$foreground-secondary",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "DeFi payment gateway — Stripe + blockchain integration with idempotent webhook handling, multi-currency swaps, and on-chain subscription billing.",
+                          "content": "Payment processing platform for healthcare & automotive businesses — practice management integration, multi-channel payments, surcharge program, and POS terminal management.",
                           "lineHeight": 1.6,
                           "fontFamily": "$font-body",
                           "fontSize": 13,
@@ -3874,7 +3877,7 @@
                           "type": "text",
                           "id": "T4Uc0D",
                           "fill": "$foreground-secondary",
-                          "content": "Solidity · Stripe · TypeScript · Web3.js",
+                          "content": "NestJs · NextJs · Payment Gateway · POS Integration",
                           "fontFamily": "$font-captions",
                           "fontSize": 11,
                           "fontWeight": "500",
@@ -3887,6 +3890,7 @@
                       "id": "l38vM",
                       "name": "sp3",
                       "width": "fill_container",
+                      "height": "fill_container",
                       "cornerRadius": "$rounded-xl",
                       "stroke": {
                         "align": "inside",
@@ -3979,104 +3983,15 @@
                   "id": "y5OOFf",
                   "name": "sideRow2",
                   "width": "fill_container",
+                  "height": "fit_content(274)",
                   "gap": 24,
                   "children": [
-                    {
-                      "type": "frame",
-                      "id": "uwB4h",
-                      "name": "sp5",
-                      "width": "fill_container",
-                      "height": "fill_container",
-                      "cornerRadius": "$rounded-xl",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "$border-subtle"
-                      },
-                      "layout": "vertical",
-                      "gap": 16,
-                      "padding": 32,
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "p3WLF",
-                          "name": "sp5h",
-                          "width": "fill_container",
-                          "justifyContent": "space_between",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "frame",
-                              "id": "lgG0q",
-                              "name": "sp5t",
-                              "fill": "#D1FAE5",
-                              "cornerRadius": "$rounded-full",
-                              "padding": [
-                                4,
-                                10
-                              ],
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "id": "BUCc3",
-                                  "fill": "#047857",
-                                  "content": "Freelance",
-                                  "fontFamily": "$font-captions",
-                                  "fontSize": 10,
-                                  "fontWeight": "600",
-                                  "letterSpacing": 0.5
-                                }
-                              ]
-                            },
-                            {
-                              "type": "text",
-                              "id": "q53BnR",
-                              "fill": "$foreground-secondary",
-                              "content": "2020",
-                              "fontFamily": "$font-captions",
-                              "fontSize": 11,
-                              "fontWeight": "normal"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "text",
-                          "id": "j1YPf",
-                          "fill": "$foreground-primary",
-                          "content": "topastravel.vn",
-                          "fontFamily": "$font-headings",
-                          "fontSize": 18,
-                          "fontWeight": "600"
-                        },
-                        {
-                          "type": "text",
-                          "id": "m6GFjf",
-                          "fill": "$foreground-secondary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "Travel website — tour booking, destination guides, and itinerary planning for Vietnamese travelers.",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "gNaQo",
-                          "fill": "$foreground-secondary",
-                          "content": "Next.js · Tailwind · Wordpress CMS",
-                          "fontFamily": "$font-captions",
-                          "fontSize": 11,
-                          "fontWeight": "500",
-                          "letterSpacing": 0.5
-                        }
-                      ]
-                    },
                     {
                       "type": "frame",
                       "id": "PK3SX",
                       "name": "sp6",
                       "width": "fill_container",
+                      "height": "fill_container",
                       "cornerRadius": "$rounded-xl",
                       "stroke": {
                         "align": "inside",
@@ -4122,7 +4037,7 @@
                               "type": "text",
                               "id": "Y4bRbQ",
                               "fill": "$foreground-secondary",
-                              "content": "2018",
+                              "content": "2020",
                               "fontFamily": "$font-captions",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -4164,9 +4079,101 @@
                     },
                     {
                       "type": "frame",
+                      "id": "MyhrR",
+                      "name": "spSunny",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "cornerRadius": "$rounded-xl",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "$border-subtle"
+                      },
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "V7VPG",
+                          "name": "spSunnyH",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Y2p1g",
+                              "name": "spSunnyTag",
+                              "fill": "#D1FAE5",
+                              "cornerRadius": "$rounded-full",
+                              "padding": [
+                                4,
+                                10
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "JF4pt",
+                                  "fill": "#166534",
+                                  "content": "Freelance",
+                                  "fontFamily": "$font-captions",
+                                  "fontSize": 10,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.5
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "kM0NV",
+                              "fill": "$foreground-secondary",
+                              "content": "2018",
+                              "fontFamily": "$font-captions",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "qYBa0",
+                          "fill": "$foreground-primary",
+                          "content": "Sunnypoint",
+                          "fontFamily": "$font-headings",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "nti3r",
+                          "fill": "$foreground-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Cloud-based CRM and loyalty platform for beauty salons, restaurants, and retail shops in Japan — point card management, marketing automation, reservation system, mobile app, and multi-store analytics serving 2,500+ stores.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bjBcJ",
+                          "fill": "$foreground-secondary",
+                          "content": "Next.js · React Native · Java · MySQL · CRM · Loyalty",
+                          "fontFamily": "$font-captions",
+                          "fontSize": 11,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
                       "id": "AMDhB",
                       "name": "sp4",
                       "width": "fill_container",
+                      "height": "fill_container",
                       "cornerRadius": "$rounded-xl",
                       "stroke": {
                         "align": "inside",
@@ -4881,6 +4888,32 @@
               ]
             }
           ]
+        },
+        {
+          "type": "frame",
+          "id": "MyXvt",
+          "name": "spSunnyTemp",
+          "width": "fill_container",
+          "height": "fit_content(0)",
+          "cornerRadius": "$rounded-xl",
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "$border-subtle"
+          },
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 32
+        },
+        {
+          "type": "text",
+          "id": "CaL2t",
+          "name": "test",
+          "fill": "#000000",
+          "content": "test",
+          "fontFamily": "Inter",
+          "fontSize": 12,
+          "fontWeight": "normal"
         }
       ]
     },
