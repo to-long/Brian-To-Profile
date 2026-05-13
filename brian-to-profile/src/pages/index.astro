@@ -1,0 +1,50 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ScrollProgress } from "@/components/islands/ScrollProgress";
+import { Nav } from "@/components/islands/Nav";
+import { Hero } from "@/components/islands/Hero";
+import TrustBar from "@/components/astro/TrustBar.astro";
+import Features from "@/components/astro/Features.astro";
+import { DeviceCascade } from "@/components/islands/DeviceCascade";
+import { ImpactMetrics } from "@/components/islands/ImpactMetrics";
+import CareerJourney from "@/components/astro/CareerJourney.astro";
+import SelectedProjects from "@/components/astro/SelectedProjects.astro";
+import SideProjects from "@/components/astro/SideProjects.astro";
+import TechStack from "@/components/astro/TechStack.astro";
+import Footer from "@/components/astro/Footer.astro";
+
+const locale = "en";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Brian To",
+  alternateName: "To Hoang Long",
+  url: "https://brian-to.dev",
+  image: "https://brian-to.dev/avatar.png",
+  jobTitle: "Principal Fullstack Engineer",
+  worksFor: { "@type": "Organization", name: "Money Forward" },
+  alumniOf: { "@type": "CollegeOrUniversity", name: "Hanoi University of Science and Technology (HUST)" },
+  knowsAbout: ["React", "Node.js", "Go", "Python", "Micro-FE", "AI/ML", "System Architecture"],
+  sameAs: ["https://www.linkedin.com/in/to-hoang-long-brian/"],
+  address: { "@type": "PostalAddress", addressLocality: "Hanoi", addressCountry: "VN" },
+};
+---
+
+<BaseLayout locale={locale}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <ScrollProgress client:only="preact" />
+  <Nav locale={locale} client:only="preact" />
+  <main class="mx-auto flex max-w-7xl flex-col gap-12 md:gap-24">
+    <Hero locale={locale} client:only="preact" />
+    <TrustBar locale={locale} />
+    <Features locale={locale} />
+    <DeviceCascade client:only="preact" />
+    <ImpactMetrics locale={locale} client:only="preact" />
+    <CareerJourney locale={locale} />
+    <SelectedProjects locale={locale} />
+    <SideProjects locale={locale} />
+    <TechStack locale={locale} />
+    <Footer locale={locale} />
+  </main>
+</BaseLayout>

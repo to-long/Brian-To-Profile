@@ -1,0 +1,162 @@
+---
+import "@/styles/globals.css";
+
+interface Props {
+  locale?: "en" | "ja";
+}
+
+const { locale = "en" } = Astro.props;
+const siteUrl = "https://brian-to.dev";
+const pageUrl = locale === "ja" ? `${siteUrl}/ja/` : `${siteUrl}/`;
+const altLocale = locale === "ja" ? "en" : "ja";
+const altUrl = altLocale === "ja" ? `${siteUrl}/ja/` : `${siteUrl}/`;
+
+const meta = {
+  en: {
+    title: "Brian To — Principal Fullstack Engineer · Technical Leader",
+    description:
+      "16+ years building high-scale products, leading cross-border teams, and turning complex systems into clean, performant experiences.",
+  },
+  ja: {
+    title: "Brian To — プリンシパル フルスタックエンジニア · テクニカルリーダー",
+    description:
+      "16年以上にわたり大規模プロダクトを構築し、国境を越えたチームを率い、複雑なシステムをクリーンで高性能な体験へと変えてきました。",
+  },
+} as const;
+
+const siteTitle = meta[locale].title;
+const siteDescription = meta[locale].description;
+const ogImage = `${siteUrl}/og-image.png`;
+---
+
+<!doctype html>
+<html lang={locale} class="h-full antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Inter:wght@300..800&family=Funnel+Sans:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SEO -->
+    <title>{siteTitle}</title>
+    <meta name="description" content={siteDescription} />
+    <meta name="author" content="Brian To" />
+    <meta
+      name="keywords"
+      content="Brian To, Principal Engineer, Fullstack Engineer, Technical Leader, React, Node.js, Go, Micro-FE, AI Integration, Vietnam, Japan"
+    />
+    <link rel="canonical" href={pageUrl} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Hreflang alternates -->
+    <link rel="alternate" hreflang={locale} href={pageUrl} />
+    <link rel="alternate" hreflang={altLocale} href={altUrl} />
+    <link rel="alternate" hreflang="x-default" href={siteUrl + "/"} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={locale === "ja" ? "ja_JP" : "en_US"} />
+    <meta property="og:locale:alternate" content={locale === "ja" ? "en_US" : "ja_JP"} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:site_name" content="Brian To" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={siteDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/btLogo.webp" />
+    <link rel="apple-touch-icon" href="/btLogo.webp" />
+
+    <!-- Theme init — runs BEFORE any framework JS to prevent FOUC -->
+    <script is:inline>
+      (function () {
+        try {
+          function migrateKey(key, prop) {
+            var raw = localStorage.getItem(key);
+            if (!raw) return undefined;
+            try {
+              var parsed = JSON.parse(raw);
+              if (parsed && parsed.state && typeof parsed.state[prop] === "string")
+                return parsed.state[prop];
+            } catch (e) {
+              if (typeof raw === "string" && raw.length < 32) {
+                try {
+                  localStorage.setItem(key, JSON.stringify({ state: { [prop]: raw }, version: 0 }));
+                } catch (e2) {}
+                return raw;
+              }
+            }
+            return undefined;
+          }
+          migrateKey("brian-to-locale", "locale");
+          var theme = migrateKey("brian-to-theme", "theme");
+          if (theme !== "dark" && theme !== "light") {
+            theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          if (theme === "dark") document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Locale redirect — redirects to stored locale if different from current page -->
+    <script is:inline define:vars={{ locale }}>
+      (function () {
+        try {
+          var raw = localStorage.getItem("brian-to-locale");
+          if (!raw) return;
+          var parsed = JSON.parse(raw);
+          var stored = parsed && parsed.state && parsed.state.locale;
+          if (!stored || stored === locale) return;
+          var target = stored === "en" ? "/" : "/" + stored + "/";
+          if (window.location.pathname !== target) {
+            window.location.replace(target);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="min-h-full">
+    <slot />
+
+    <!-- Reveal animation observer (~200 bytes) -->
+    <script is:inline>
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("revealed");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.05 }
+        );
+        document.querySelectorAll("[data-reveal]").forEach(function (el) {
+          io.observe(el);
+        });
+      } else {
+        document.querySelectorAll("[data-reveal]").forEach(function (el) {
+          el.classList.add("revealed");
+        });
+      }
+    </script>
+
+    <!-- Vercel Analytics + Speed Insights (injected automatically on Vercel) -->
+  </body>
+</html>

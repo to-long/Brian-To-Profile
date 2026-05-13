@@ -1,9 +1,8 @@
-import type { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-preact";
 import {
   Brain,
   Cloud,
   Code,
-  Compass,
   Database,
   Layers,
   Monitor,
@@ -11,7 +10,7 @@ import {
   Smartphone,
   Users,
   Zap,
-} from "lucide-react";
+} from "lucide-preact";
 
 export const COMPANIES = [
   [

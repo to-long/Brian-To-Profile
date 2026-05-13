@@ -1,0 +1,35 @@
+---
+import { getTranslations } from "@/lib/i18n/getTranslations";
+import { COMPANIES } from "@/data/portfolio";
+
+interface Props {
+  locale?: "en" | "ja";
+}
+
+const { locale = "en" } = Astro.props;
+const t = getTranslations("trust", locale);
+---
+
+<section class="flex flex-col items-center gap-6 py-10">
+  <p
+    data-reveal
+    class="font-captions text-[11px] font-medium tracking-[0.25em] text-[var(--color-foreground-secondary)]"
+  >
+    {t("label")}
+  </p>
+
+  <div data-reveal class="flex flex-col items-center gap-y-5">
+    {COMPANIES.map((row) => (
+      <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 px-6 md:gap-x-16">
+        {row.map((c) => (
+          <span
+            style={`font-weight: ${c.weight}; letter-spacing: ${c.spacing}px;`}
+            class="cursor-default font-headings text-base text-[var(--color-foreground-secondary)] transition-colors duration-200 hover:text-[var(--color-foreground-primary)] md:text-lg"
+          >
+            {c.name}
+          </span>
+        ))}
+      </div>
+    ))}
+  </div>
+</section>

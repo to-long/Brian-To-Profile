@@ -1,0 +1,254 @@
+import { AnimatePresence, LazyMotion, domAnimation, m } from "motion/react";
+import { Download, Menu, X } from "lucide-preact";
+import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
+import { useScrollProgress } from "@/hooks/useScrollProgress";
+import { useActiveSection } from "@/hooks/useActiveSection";
+import { getTranslations } from "@/lib/i18n/getTranslations";
+import { NAV_LINKS } from "@/data/portfolio";
+import { cn } from "@/lib/utils";
+import { LanguageSwitch } from "./LanguageSwitch";
+import { ThemeToggle } from "./ThemeToggle";
+import type { Locale } from "@/lib/i18n/translations";
+
+const NAV_IDS = NAV_LINKS.map((l) => l.id);
+
+interface Props {
+  locale: Locale;
+}
+
+export function Nav({ locale }: Props) {
+  const { scrolled } = useScrollProgress();
+  const active = useActiveSection(NAV_IDS);
+  const t = getTranslations("nav", locale);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [clickedTarget, setClickedTarget] = useState<string | null>(null);
+  const [pendingMobileClose, setPendingMobileClose] = useState(false);
+
+  useEffect(() => {
+    if (!clickedTarget) return;
+    if (active === clickedTarget) {
+      setClickedTarget(null);
+      return;
+    }
+    const safety = window.setTimeout(() => setClickedTarget(null), 2000);
+    return () => window.clearTimeout(safety);
+  }, [clickedTarget, active]);
+
+  useEffect(() => {
+    if (!pendingMobileClose) return;
+    if (clickedTarget !== null) return;
+    const t = window.setTimeout(() => {
+      setMobileOpen(false);
+      setPendingMobileClose(false);
+    }, 250);
+    return () => window.clearTimeout(t);
+  }, [pendingMobileClose, clickedTarget]);
+
+  const visualActive = clickedTarget ?? active;
+
+  const linksRef = useRef<(HTMLAnchorElement | null)[]>([]);
+  const [indicator, setIndicator] = useState<{ x: number; w: number } | null>(null);
+
+  const useIso = typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+  useIso(() => {
+    const idx = NAV_LINKS.findIndex((l) => l.id === visualActive);
+    const el = linksRef.current[idx];
+    if (el) {
+      const x = el.offsetLeft;
+      const w = el.offsetWidth;
+      setIndicator((prev) => (prev?.x === x && prev?.w === w ? prev : { x, w }));
+    }
+  }, [visualActive]);
+
+  useEffect(() => {
+    const onResize = () => {
+      const idx = NAV_LINKS.findIndex((l) => l.id === visualActive);
+      const el = linksRef.current[idx];
+      if (el) {
+        const x = el.offsetLeft;
+        const w = el.offsetWidth;
+        setIndicator((prev) => (prev?.x === x && prev?.w === w ? prev : { x, w }));
+      }
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [visualActive]);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      const previous = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = previous;
+      };
+    }
+  }, [mobileOpen]);
+
+  return (
+    <LazyMotion features={domAnimation} strict>
+      <>
+        {mobileOpen ? (
+          <m.button
+            type="button"
+            aria-label="Close menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.25 }}
+            onClick={() => setMobileOpen(false)}
+            class="fixed inset-0 z-40 cursor-default bg-transparent md:hidden"
+            style={{
+              backdropFilter: "blur(14px) saturate(140%)",
+              WebkitBackdropFilter: "blur(14px) saturate(140%)",
+            }}
+          />
+        ) : null}
+
+        <m.nav
+          initial={{ y: -32, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          class={cn(
+            "fixed top-0 left-0 right-0 z-50 [transition:border-color_300ms_ease,background-color_300ms_ease,backdrop-filter_300ms_ease]",
+            scrolled
+              ? "border-b border-[var(--color-border-subtle)] bg-[color-mix(in_srgb,var(--color-surface)_82%,transparent)] backdrop-blur-xl"
+              : "border-b border-transparent",
+          )}
+        >
+          <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-4 md:gap-4 md:px-6 lg:px-10">
+            <a href="#home" class="flex shrink-0 items-center gap-2.5">
+              <m.span
+                whileHover={{ scale: 1.06, rotate: -4 }}
+                transition={{ type: "spring", stiffness: 400, damping: 18 }}
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg, #22D3EE 0%, #0EA5E9 25%, #3B82F6 50%, #0066FF 75%, #4F46E5 100%)",
+                }}
+                class="relative flex h-8 w-8 items-center justify-center rounded-full shadow-[0_4px_12px_rgba(0,102,255,0.25),inset_0_1px_0_rgba(255,255,255,0.3)]"
+              >
+                <span class="font-headings text-[15px] font-bold leading-none tracking-[-0.04em] text-white">
+                  BT
+                </span>
+              </m.span>
+              <span class="font-headings text-[18px] font-bold leading-none tracking-[-0.01em] whitespace-nowrap">
+                Brian To
+              </span>
+            </a>
+
+            <ul class="relative hidden items-center gap-4 md:flex lg:gap-7">
+              {indicator ? (
+                <m.span
+                  aria-hidden
+                  class="absolute -bottom-1.5 h-[2px] rounded-full bg-[var(--color-accent)] pointer-events-none"
+                  initial={false}
+                  animate={{ x: indicator.x, width: indicator.w }}
+                  transition={{ type: "spring", stiffness: 320, damping: 32, mass: 0.5 }}
+                />
+              ) : null}
+              {NAV_LINKS.map((link, i) => {
+                const isActive = visualActive === link.id;
+                return (
+                  <li key={link.id}>
+                    <a
+                      ref={(el) => {
+                        linksRef.current[i] = el;
+                      }}
+                      href={link.href}
+                      onClick={() => setClickedTarget(link.id)}
+                      class={cn(
+                        "relative whitespace-nowrap text-[13px] transition-colors lg:text-sm",
+                        isActive
+                          ? "font-medium text-[var(--color-foreground-primary)]"
+                          : "text-[var(--color-foreground-secondary)] hover:text-[var(--color-foreground-primary)]",
+                      )}
+                    >
+                      {t(`links.${link.id}`)}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <div class="hidden shrink-0 items-center gap-1.5 md:flex lg:gap-2">
+              <LanguageSwitch locale={locale} />
+              <ThemeToggle />
+              <a
+                href="/CV-BrianTo-Principal Fullstack Engineer _ Technical Leader.pdf"
+                download="Brian-To-CV.pdf"
+                class="ml-0.5 inline-flex h-9 min-w-[100px] items-center justify-center gap-1.5 rounded-full bg-[var(--color-accent)] px-3.5 text-[13px] font-semibold text-white transition-transform hover:scale-[1.03] hover:shadow-lg hover:shadow-[var(--color-accent)]/25 lg:ml-1 lg:min-w-[112px] lg:px-4 lg:text-sm"
+              >
+                <span class="whitespace-nowrap">{t("resume")}</span>
+                <Download size={13} />
+              </a>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setMobileOpen((v) => !v)}
+              class="flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--color-border-subtle)] md:hidden"
+              aria-label="Open menu"
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                <m.span
+                  key={mobileOpen ? "close" : "open"}
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.18 }}
+                >
+                  {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+                </m.span>
+              </AnimatePresence>
+            </button>
+          </div>
+
+          <AnimatePresence>
+            {mobileOpen ? (
+              <m.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                class="relative z-10 max-h-[calc(100vh-72px)] overflow-y-auto border-t border-[var(--color-border-subtle)] bg-[var(--color-surface)] shadow-[0_24px_48px_-12px_rgba(2,6,23,0.45),0_8px_16px_-8px_rgba(2,6,23,0.25)] md:hidden"
+              >
+                <div class="flex flex-col gap-1 px-6 py-4">
+                  {NAV_LINKS.map((link) => (
+                    <a
+                      key={link.id}
+                      href={link.href}
+                      onClick={() => {
+                        setClickedTarget(link.id);
+                        setPendingMobileClose(true);
+                      }}
+                      class={cn(
+                        "rounded-lg px-3 py-2.5 text-sm",
+                        visualActive === link.id
+                          ? "bg-[var(--color-accent-soft)] text-[var(--color-accent)]"
+                          : "text-[var(--color-foreground-secondary)]",
+                      )}
+                    >
+                      {t(`links.${link.id}`)}
+                    </a>
+                  ))}
+                  <div class="mt-3 flex items-center gap-2">
+                    <LanguageSwitch locale={locale} />
+                    <ThemeToggle />
+                    <a
+                      href="/CV-BrianTo-Principal Fullstack Engineer _ Technical Leader.pdf"
+                      download="Brian-To-CV.pdf"
+                      onClick={() => setMobileOpen(false)}
+                      class="ml-auto inline-flex h-9 items-center justify-center gap-1.5 rounded-full bg-[var(--color-accent)] px-3.5 text-[13px] font-semibold text-white shadow-md shadow-[var(--color-accent)]/25"
+                    >
+                      <span class="whitespace-nowrap">{t("resume")}</span>
+                      <Download size={13} />
+                    </a>
+                  </div>
+                </div>
+              </m.div>
+            ) : null}
+          </AnimatePresence>
+        </m.nav>
+      </>
+    </LazyMotion>
+  );
+}

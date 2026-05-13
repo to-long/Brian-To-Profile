@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brian-to.dev/sitemap-index.xml

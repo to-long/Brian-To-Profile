@@ -1,0 +1,68 @@
+---
+import { getTranslations } from "@/lib/i18n/getTranslations";
+import { FEATURES } from "@/data/portfolio";
+
+interface Props {
+  locale?: "en" | "ja";
+}
+
+const { locale = "en" } = Astro.props;
+const t = getTranslations("features", locale);
+---
+
+<section class="flex flex-col items-center gap-10 py-12">
+  <div data-reveal>
+    <h2 class="gradient-heading px-6 text-center font-headings text-4xl font-bold leading-tight md:text-5xl">
+      {t("heading")}
+    </h2>
+  </div>
+
+  <div
+    data-stagger
+    class="grid w-full max-w-5xl grid-cols-2 gap-x-8 gap-y-10 px-6 md:grid-cols-4 md:gap-x-12"
+  >
+    {FEATURES.map((f, i) => (
+      <div
+        data-reveal
+        style={`--stagger-index: ${i};`}
+        class="flex flex-col items-center gap-4 text-center"
+      >
+        <div
+          style={`background-image: linear-gradient(135deg, ${f.bgGradient[0]} 0%, ${f.bgGradient[1]} 100%);`}
+          class="flex h-12 w-12 items-center justify-center rounded-xl"
+        >
+          {i === 0 && (
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke={f.iconColor} stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          )}
+          {i === 1 && (
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke={f.iconColor} stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
+            </svg>
+          )}
+          {i === 2 && (
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke={f.iconColor} stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          )}
+          {i === 3 && (
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke={f.iconColor} stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          )}
+        </div>
+        <h3 class="font-headings text-sm font-bold">{t(`items.${i}.title`)}</h3>
+        <p class="font-captions text-[13px] leading-relaxed text-[var(--color-foreground-secondary)] [text-wrap:pretty]">
+          {t(`items.${i}.description`)}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,98 @@
+---
+import { getTranslations } from "@/lib/i18n/getTranslations";
+import { SIDE_PROJECTS, type SideProjectTagColor } from "@/data/portfolio";
+import { cn } from "@/lib/utils";
+
+interface Props {
+  locale?: "en" | "ja";
+}
+
+const { locale = "en" } = Astro.props;
+const t = getTranslations("sideProjects", locale);
+
+const TAG_STYLES: Record<SideProjectTagColor, string> = {
+  purple: "bg-[var(--color-tag-purple)] text-[var(--color-tag-purple-fg)]",
+  blue: "bg-[var(--color-accent-soft)] text-[var(--color-accent)]",
+  green: "bg-[var(--color-tag-green)] text-[var(--color-tag-green-fg)]",
+};
+---
+
+<section class="flex flex-col items-center gap-12 py-16">
+  <div data-reveal>
+    <div class="flex flex-col items-center gap-3 px-6">
+      <h2 class="gradient-heading text-center font-headings text-4xl font-bold md:text-5xl">
+        {t("heading")}
+      </h2>
+      <p class="max-w-xl text-center text-[var(--color-foreground-secondary)]">
+        {t("subheading")}
+      </p>
+    </div>
+  </div>
+
+  <div class="grid w-full max-w-5xl grid-cols-1 gap-4 px-6 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
+    {SIDE_PROJECTS.map((p, i) => {
+      const Tag = p.url ? "a" : "article";
+      const linkProps = p.url
+        ? { href: p.url, target: "_blank", rel: "noopener noreferrer" }
+        : {};
+
+      return (
+        <Tag
+          {...linkProps}
+          data-reveal
+          data-hover-lift
+          style={`--stagger-index: ${i % 3};`}
+          class="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] p-7 [transition:box-shadow_280ms_ease-out,border-color_280ms_ease-out] hover:border-[var(--color-accent)]/40 hover:shadow-xl hover:shadow-black/10 will-change-transform"
+        >
+          <div class="absolute inset-0 -z-10 bg-gradient-to-br from-transparent via-transparent to-[color-mix(in_srgb,var(--color-accent)_8%,transparent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+          <div class="flex items-center justify-between">
+            <span
+              class={cn(
+                "rounded-full px-2.5 py-1 font-captions text-[10px] font-semibold tracking-wide",
+                TAG_STYLES[p.tagColor],
+              )}
+            >
+              {p.tag}
+            </span>
+            <span class="font-captions text-[11px] text-[var(--color-foreground-secondary)]">
+              {p.year}
+            </span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <h3 class="font-headings text-lg font-semibold">
+              {t(`items.${i}.title`)}
+            </h3>
+            {p.url && (
+              <svg
+                viewBox="0 0 24 24"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="shrink-0 text-[var(--color-foreground-secondary)] opacity-0 transition-opacity group-hover:opacity-100"
+                aria-hidden="true"
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            )}
+          </div>
+
+          <p class="flex-1 text-[13px] leading-relaxed text-[var(--color-foreground-secondary)]">
+            {t(`items.${i}.description`)}
+          </p>
+
+          <p class="font-captions text-[11px] font-medium tracking-wide text-[var(--color-foreground-secondary)]">
+            {p.tech}
+          </p>
+        </Tag>
+      );
+    })}
+  </div>
+</section>

@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "preact/hooks";
 
 export function useScrollProgress() {
   const [progress, setProgress] = useState(0);

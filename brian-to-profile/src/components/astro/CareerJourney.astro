@@ -1,0 +1,51 @@
+---
+import { getTranslations } from "@/lib/i18n/getTranslations";
+import { CAREER } from "@/data/portfolio";
+
+interface Props {
+  locale?: "en" | "ja";
+}
+
+const { locale = "en" } = Astro.props;
+const t = getTranslations("career", locale);
+---
+
+<section id="experience" class="flex flex-col items-center gap-12 py-16">
+  <div data-reveal>
+    <h2 class="gradient-heading px-6 text-center font-headings text-4xl font-bold md:text-5xl">
+      {t("heading")}
+    </h2>
+  </div>
+
+  <div class="flex w-full max-w-5xl flex-col gap-4 px-6">
+    {CAREER.map((entry, i) => (
+      <article
+        data-reveal="left"
+        data-hover-lift
+        style={`--stagger-index: ${i};`}
+        class="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] p-6 [transition:box-shadow_280ms_ease-out,border-color_280ms_ease-out] hover:border-[var(--color-accent)]/40 hover:shadow-xl hover:shadow-black/10 will-change-transform md:flex-row md:gap-8 md:p-7"
+      >
+        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-transparent via-transparent to-[color-mix(in_srgb,var(--color-accent)_8%,transparent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+        <div class="flex shrink-0 flex-col gap-1 md:w-40">
+          <span class="font-captions text-xs font-semibold tracking-wide text-[var(--color-accent)]">
+            {entry.period}
+          </span>
+          <span class="font-captions text-[11px] text-[var(--color-foreground-secondary)]">
+            {t(`durations.${i}`)}
+          </span>
+        </div>
+
+        <div class="flex flex-1 flex-col gap-2">
+          <h3 class="font-headings text-xl font-semibold">{entry.company}</h3>
+          <p class="text-sm font-medium text-[var(--color-foreground-secondary)]">
+            {t(`entries.${i}.role`)}
+          </p>
+          <p class="text-[13px] leading-relaxed text-[var(--color-foreground-secondary)]">
+            {t(`entries.${i}.description`)}
+          </p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

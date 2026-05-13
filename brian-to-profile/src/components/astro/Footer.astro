@@ -1,0 +1,150 @@
+---
+import { getTranslations } from "@/lib/i18n/getTranslations";
+import { CONTACT } from "@/data/portfolio";
+import { cn } from "@/lib/utils";
+
+interface Props {
+  locale?: "en" | "ja";
+}
+
+const { locale = "en" } = Astro.props;
+const t = getTranslations("contact", locale);
+
+type ContactColumn = {
+  iconMobile: string;
+  iconDesktop: string;
+  label: string;
+  value: string;
+  href?: string;
+  accent?: boolean;
+};
+
+const mailSvg = (size: number) =>
+  `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`;
+
+const phoneSvg = (size: number) =>
+  `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
+
+const linkedinSvg = (size: number) =>
+  `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zm1.78 13.02H3.56V9h3.56v11.45z"/></svg>`;
+
+const mapPinSvg = (size: number) =>
+  `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`;
+
+const columns: ContactColumn[] = [
+  {
+    iconMobile: mailSvg(16),
+    iconDesktop: mailSvg(12),
+    label: t("labels.email"),
+    value: CONTACT.email,
+    href: `mailto:${CONTACT.email}`,
+  },
+  {
+    iconMobile: phoneSvg(16),
+    iconDesktop: phoneSvg(12),
+    label: t("labels.phone"),
+    value: CONTACT.phone,
+    href: `tel:${CONTACT.phone.replace(/[^+0-9]/g, "")}`,
+  },
+  {
+    iconMobile: linkedinSvg(16),
+    iconDesktop: linkedinSvg(12),
+    label: t("labels.linkedin"),
+    value: CONTACT.linkedinLabel,
+    href: CONTACT.linkedin,
+    accent: true,
+  },
+  {
+    iconMobile: mapPinSvg(16),
+    iconDesktop: mapPinSvg(12),
+    label: t("labels.location"),
+    value: CONTACT.location,
+  },
+];
+---
+
+<footer id="contact" class="flex flex-col items-center gap-10 py-20">
+  <div data-reveal>
+    <h2 class="gradient-heading px-6 text-center font-headings text-4xl font-bold md:text-5xl">
+      {t("heading")}
+    </h2>
+  </div>
+
+  <div data-reveal>
+    <p class="max-w-xl px-6 text-center text-[var(--color-foreground-secondary)] md:text-base">
+      {t("subheading")}
+    </p>
+  </div>
+
+  <div data-reveal>
+    <div class="grid w-full max-w-5xl grid-cols-1 gap-3 px-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 md:grid-cols-4">
+      {columns.map(({ iconMobile, iconDesktop, label, value, href, accent }) => {
+        const mobileContent = (
+          <span class="flex w-full items-center gap-2.5 rounded-xl bg-[color-mix(in_srgb,var(--color-foreground-primary)_4%,transparent)] px-3.5 py-3.5 text-[13px] sm:hidden">
+            <span
+              class={accent ? "text-[var(--color-accent)]" : "text-[var(--color-foreground-secondary)]"}
+              set:html={iconMobile}
+            />
+            <span
+              class={cn(
+                "min-w-0 flex-1 truncate",
+                accent ? "text-[var(--color-accent)]" : "text-[var(--color-foreground-primary)]",
+              )}
+              title={value}
+            >
+              {value}
+            </span>
+          </span>
+        );
+
+        const desktopContent = (
+          <div class="hidden min-w-0 flex-col items-start gap-2 text-left sm:flex">
+            <span class="flex items-center gap-1.5 font-captions text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-foreground-muted)]">
+              <span
+                class={accent ? "text-[var(--color-accent)]" : "text-[var(--color-foreground-muted)]"}
+                set:html={iconDesktop}
+              />
+              {label}
+            </span>
+            <span
+              title={value}
+              class={cn(
+                "block w-full truncate text-sm",
+                accent ? "text-[var(--color-accent)]" : "text-[var(--color-foreground-primary)]",
+              )}
+            >
+              {value}
+            </span>
+          </div>
+        );
+
+        return href ? (
+          <a
+            href={href}
+            target={href.startsWith("http") ? "_blank" : undefined}
+            rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+            class="block w-full transition-transform duration-200 hover:-translate-y-[3px]"
+          >
+            {mobileContent}
+            {desktopContent}
+          </a>
+        ) : (
+          <div class="w-full">
+            {mobileContent}
+            {desktopContent}
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <div class="mt-6 w-full max-w-5xl border-t border-[var(--color-border-subtle)] pt-6">
+    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 px-6 font-captions text-xs tracking-wide text-[var(--color-foreground-secondary)]">
+      <span>{t("education")}</span>
+      <span aria-hidden="true">&middot;</span>
+      <span>{t("award1")}</span>
+      <span aria-hidden="true">&middot;</span>
+      <span>{t("award2")}</span>
+    </div>
+  </div>
+</footer>

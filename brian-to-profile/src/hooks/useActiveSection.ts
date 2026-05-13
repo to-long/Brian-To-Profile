@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "preact/hooks";
 
 export function useActiveSection(ids: readonly string[], offset = 96) {
   const [active, setActive] = useState<string>(ids[0] ?? "");
