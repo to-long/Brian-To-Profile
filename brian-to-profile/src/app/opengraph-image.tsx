@@ -106,7 +106,7 @@ export default async function OgImage() {
               maxWidth: "640px",
             }}
           >
-            15 years building high-scale products, leading cross-border teams,
+            16+ years building high-scale products, leading cross-border teams,
             and turning complex systems into clean, performant experiences.
           </div>
         </div>

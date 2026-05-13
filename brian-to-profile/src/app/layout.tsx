@@ -23,7 +23,7 @@ const funnel = Funnel_Sans({
 const siteUrl = "https://brian-to.dev";
 const siteTitle = "Brian To — Principal Fullstack Engineer · Technical Leader";
 const siteDescription =
-  "15 years building high-scale products, leading cross-border teams, and turning complex systems into clean, performant experiences.";
+  "16+ years building high-scale products, leading cross-border teams, and turning complex systems into clean, performant experiences.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

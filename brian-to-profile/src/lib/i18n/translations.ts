@@ -21,7 +21,7 @@ export const translations = {
     hero: {
       caption: "PRINCIPAL FULLSTACK ENGINEER · TECHNICAL LEADER",
       tagline:
-        "15 years building high-scale products, leading cross-border teams, and turning complex systems into clean, performant experiences.",
+        "16+ years building high-scale products, leading cross-border teams, and turning complex systems into clean, performant experiences.",
       cta: "Get in touch",
     },
     trust: { label: "BUILDING PRODUCTS AT" },
@@ -188,7 +188,7 @@ export const translations = {
     hero: {
       caption: "プリンシパル・フルスタックエンジニア · テクニカルリーダー",
       tagline:
-        "15年にわたり大規模プロダクトを構築し、国境を越えたチームを率い、複雑なシステムをクリーンで高性能な体験へと変えてきました。",
+        "16年以上にわたり大規模プロダクトを構築し、国境を越えたチームを率い、複雑なシステムをクリーンで高性能な体験へと変えてきました。",
       cta: "お問い合わせ",
     },
     trust: { label: "これまでの所属" },
