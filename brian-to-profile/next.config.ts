@@ -76,6 +76,26 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+      // Immutable cache for hashed Next.js build assets (JS, CSS, fonts, media)
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      // Long cache for public static files (images, favicon, PDF)
+      {
+        source: "/(.*)\\.(png|webp|jpg|jpeg|svg|ico|pdf|woff2)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=2592000, stale-while-revalidate=86400",
+          },
+        ],
+      },
     ];
   },
 };

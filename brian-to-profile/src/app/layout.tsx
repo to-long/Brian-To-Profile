@@ -8,16 +8,19 @@ import "./globals.css";
 const geist = Geist({
   variable: "--font-geist",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const funnel = Funnel_Sans({
   variable: "--font-funnel",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const siteUrl = "https://brian-to.dev";
