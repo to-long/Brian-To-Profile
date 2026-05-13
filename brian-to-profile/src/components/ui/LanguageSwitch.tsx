@@ -1,6 +1,6 @@
 "use client";
 
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { selectLocale, setLocale, useLanguageStore } from "@/store/useLanguageStore";
 import { LOCALES, type Locale } from "@/lib/i18n/translations";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,7 @@ export function LanguageSwitch({ className }: { className?: string }) {
       aria-label="Language"
       style={{ padding: PADDING }}
     >
-      <m.span
+      <motion.span
         aria-hidden
         className="absolute rounded-full bg-[var(--color-foreground-primary)] pointer-events-none"
         initial={false}

@@ -1,6 +1,6 @@
 "use client";
 
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
 import { MouseEvent, useEffect } from "react";
 import {
@@ -34,7 +34,7 @@ export function ThemeToggle({ className }: { className?: string }) {
         className,
       )}
     >
-      <m.span
+      <motion.span
         aria-hidden
         className="absolute top-1 left-1 h-7 w-7 rounded-full bg-[var(--color-foreground-primary)] pointer-events-none"
         initial={false}

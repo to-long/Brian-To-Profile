@@ -1,6 +1,6 @@
 "use client";
 
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { CAREER } from "@/data/portfolio";
 import { Reveal } from "@/components/animations/Reveal";
@@ -17,7 +17,7 @@ export function CareerJourney() {
 
       <div className="flex w-full max-w-5xl flex-col gap-4 px-6">
         {CAREER.map((entry, i) => (
-          <m.article
+          <motion.article
             key={entry.company}
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -44,7 +44,7 @@ export function CareerJourney() {
                 {t(`entries.${i}.description`)}
               </p>
             </div>
-          </m.article>
+          </motion.article>
         ))}
       </div>
     </section>

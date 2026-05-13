@@ -1,6 +1,6 @@
 "use client";
 
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { PROJECTS, type ProjectTagColor } from "@/data/portfolio";
 import { Reveal } from "@/components/animations/Reveal";
@@ -29,7 +29,7 @@ export function SelectedProjects() {
 
       <div className="grid w-full max-w-5xl grid-cols-1 gap-4 px-6 md:grid-cols-3 md:gap-6">
         {PROJECTS.map((p, i) => (
-          <m.article
+          <motion.article
             key={p.title}
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export function SelectedProjects() {
             <p className="font-captions text-[11px] font-medium tracking-wide text-[var(--color-foreground-secondary)]">
               {p.tech}
             </p>
-          </m.article>
+          </motion.article>
         ))}
       </div>
     </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { SIDE_PROJECTS, type SideProjectTagColor } from "@/data/portfolio";
@@ -30,7 +30,7 @@ export function SideProjects() {
 
       <div className="grid w-full max-w-5xl grid-cols-1 gap-4 px-6 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
         {SIDE_PROJECTS.map((p, i) => {
-          const Wrapper = p.url ? m.a : m.article;
+          const Wrapper = p.url ? motion.a : motion.article;
           const linkProps = p.url
             ? { href: p.url, target: "_blank", rel: "noopener noreferrer" }
             : {};
