@@ -19,7 +19,7 @@ export default async function OgImage() {
           justifyContent: "center",
           alignItems: "flex-start",
           padding: "80px 100px",
-          background: "linear-gradient(135deg, #0a0a0c 0%, #111118 50%, #0d1020 100%)",
+          background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #eef2ff 100%)",
           fontFamily: "Inter, system-ui, sans-serif",
           position: "relative",
           overflow: "hidden",
@@ -35,7 +35,7 @@ export default async function OgImage() {
             height: "500px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(0,102,255,0.25) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(0,102,255,0.08) 0%, transparent 70%)",
           }}
         />
         {/* Purple glow bottom-left */}
@@ -48,7 +48,7 @@ export default async function OgImage() {
             height: "400px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(147,51,234,0.2) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(147,51,234,0.07) 0%, transparent 70%)",
           }}
         />
 
@@ -58,7 +58,7 @@ export default async function OgImage() {
             fontSize: 16,
             fontWeight: 600,
             letterSpacing: "3px",
-            color: "#60a5fa",
+            color: "#0066ff",
             textTransform: "uppercase",
             marginBottom: "24px",
           }}
@@ -71,7 +71,7 @@ export default async function OgImage() {
           style={{
             fontSize: 72,
             fontWeight: 700,
-            color: "#f4f4f5",
+            color: "#1a1a1a",
             lineHeight: 1.1,
             marginBottom: "24px",
           }}
@@ -84,7 +84,7 @@ export default async function OgImage() {
           style={{
             fontSize: 24,
             fontWeight: 400,
-            color: "#a1a1aa",
+            color: "#666666",
             lineHeight: 1.5,
             maxWidth: "800px",
           }}
@@ -111,7 +111,7 @@ export default async function OgImage() {
                 fontSize: 13,
                 fontWeight: 600,
                 letterSpacing: "2px",
-                color: "#71717a",
+                color: "#999999",
               }}
             >
               {company}
