@@ -27,7 +27,6 @@ export function Features() {
               className="flex flex-col items-center gap-4 text-center"
             >
               <div
-                data-hover-lift="sm"
                 style={{
                   backgroundImage: `linear-gradient(135deg, ${f.bgGradient[0]} 0%, ${f.bgGradient[1]} 100%)`,
                 }}

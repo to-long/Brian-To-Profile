@@ -130,7 +130,7 @@ export function Footer() {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                data-hover-lift
+
                 className="block w-full"
               >
                 {mobile}

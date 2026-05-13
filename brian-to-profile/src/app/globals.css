@@ -186,21 +186,7 @@ footer[id] {
   transition-delay: calc(var(--stagger-i, 0) * 80ms);
 }
 
-/* Hover lift — pure CSS replacement for whileHover={{ y: -8 }} */
-[data-hover-lift] {
-  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.28s ease-out,
-              border-color 0.28s ease-out;
-  will-change: transform;
-}
-[data-hover-lift]:hover {
-  transform: translateY(-8px);
-}
-
-/* Small hover lift for icons / small elements */
-[data-hover-lift="sm"]:hover {
-  transform: translateY(-4px) rotate(-3deg);
-}
+/* Hover lift — disabled (distracting continuous motion) */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -211,13 +197,5 @@ footer[id] {
     transform: none;
     filter: none;
     transition: none;
-  }
-  [data-hover-lift],
-  [data-hover-lift="sm"] {
-    transition: none;
-  }
-  [data-hover-lift]:hover,
-  [data-hover-lift="sm"]:hover {
-    transform: none;
   }
 }
