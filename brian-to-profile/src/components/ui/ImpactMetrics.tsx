@@ -1,7 +1,7 @@
 "use client";
 
 import { m, useInView } from "motion/react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/i18n/useTranslations";
 import { useEffect, useRef, useState } from "react";
 import { METRICS } from "@/data/portfolio";
 import { Reveal } from "@/components/animations/Reveal";

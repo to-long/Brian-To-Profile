@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Inter, Funnel_Sans } from "next/font/google";
-import { getLocale, getMessages, setRequestLocale } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { IntlProvider } from "@/components/providers/IntlProvider";
 import { MotionProvider } from "@/components/providers/MotionProvider";
-import type { Locale } from "@/lib/i18n/translations";
 import "./globals.css";
 
 const geist = Geist({
@@ -111,19 +109,12 @@ const themeInitScript = `
   } catch (e) {}
 })();`;
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  // Resolve the server-side locale + messages via next-intl's getRequestConfig.
-  // This populates the request context so static prerender doesn't trigger
-  // ENVIRONMENT_FALLBACK during build (Vercel surfaces that as a hard error).
-  const locale = (await getLocale()) as Locale;
-  setRequestLocale(locale);
-  const messages = await getMessages();
-
   return (
     <html
-      lang={locale}
+      lang="en"
       suppressHydrationWarning
       className={`${geist.variable} ${inter.variable} ${funnel.variable} h-full antialiased`}
     >
@@ -131,7 +122,7 @@ export default async function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-full">
-        <IntlProvider initialLocale={locale} initialMessages={messages}>
+        <IntlProvider>
           <MotionProvider>
             {children}
           </MotionProvider>

@@ -1,7 +1,7 @@
 "use client";
 
 import { m } from "motion/react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/i18n/useTranslations";
 import { PROJECTS, type ProjectTagColor } from "@/data/portfolio";
 import { Reveal } from "@/components/animations/Reveal";
 import { cn } from "@/lib/utils";

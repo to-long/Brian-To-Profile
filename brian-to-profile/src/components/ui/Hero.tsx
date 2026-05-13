@@ -3,7 +3,7 @@
 import { m, useScroll, useTransform } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/i18n/useTranslations";
 import { useRef } from "react";
 
 export function Hero() {

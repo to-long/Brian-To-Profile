@@ -2,7 +2,7 @@
 
 import { m } from "motion/react";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/i18n/useTranslations";
 import { CONTACT } from "@/data/portfolio";
 import { Reveal } from "@/components/animations/Reveal";
 import { cn } from "@/lib/utils";

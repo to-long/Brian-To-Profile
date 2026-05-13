@@ -2,7 +2,7 @@
 
 import { m } from "motion/react";
 import { ExternalLink } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/i18n/useTranslations";
 import { SIDE_PROJECTS, type SideProjectTagColor } from "@/data/portfolio";
 import { Reveal } from "@/components/animations/Reveal";
 import { cn } from "@/lib/utils";

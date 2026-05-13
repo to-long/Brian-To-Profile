@@ -5,15 +5,17 @@ import { Download, Menu, X } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
 import { useActiveSection } from "@/hooks/useActiveSection";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/i18n/useTranslations";
 import { NAV_LINKS } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { ThemeToggle } from "./ThemeToggle";
 
+const NAV_IDS = NAV_LINKS.map((l) => l.id);
+
 export function Nav() {
   const { scrolled } = useScrollProgress();
-  const active = useActiveSection(NAV_LINKS.map((l) => l.id));
+  const active = useActiveSection(NAV_IDS);
   const t = useTranslations("nav");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [clickedTarget, setClickedTarget] = useState<string | null>(null);
@@ -50,14 +52,22 @@ export function Nav() {
   useIso(() => {
     const idx = NAV_LINKS.findIndex((l) => l.id === visualActive);
     const el = linksRef.current[idx];
-    if (el) setIndicator({ x: el.offsetLeft, w: el.offsetWidth });
-  }, [visualActive, t]);
+    if (el) {
+      const x = el.offsetLeft;
+      const w = el.offsetWidth;
+      setIndicator((prev) => (prev?.x === x && prev?.w === w ? prev : { x, w }));
+    }
+  }, [visualActive]);
 
   useEffect(() => {
     const onResize = () => {
       const idx = NAV_LINKS.findIndex((l) => l.id === visualActive);
       const el = linksRef.current[idx];
-      if (el) setIndicator({ x: el.offsetLeft, w: el.offsetWidth });
+      if (el) {
+        const x = el.offsetLeft;
+        const w = el.offsetWidth;
+        setIndicator((prev) => (prev?.x === x && prev?.w === w ? prev : { x, w }));
+      }
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
@@ -68,7 +78,11 @@ export function Nav() {
     const ro = new ResizeObserver(() => {
       const idx = NAV_LINKS.findIndex((l) => l.id === visualActive);
       const el = linksRef.current[idx];
-      if (el) setIndicator({ x: el.offsetLeft, w: el.offsetWidth });
+      if (el) {
+        const x = el.offsetLeft;
+        const w = el.offsetWidth;
+        setIndicator((prev) => (prev?.x === x && prev?.w === w ? prev : { x, w }));
+      }
     });
     linksRef.current.forEach((el) => el && ro.observe(el));
     return () => ro.disconnect();
