@@ -127,6 +127,16 @@ export default function RootLayout({
             {children}
           </MotionProvider>
         </IntlProvider>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: [
+              // Reveal observer
+              `if("IntersectionObserver"in window){var io=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add("revealed");io.unobserve(e.target)}})},{threshold:0.05});document.querySelectorAll("[data-reveal]").forEach(function(e){io.observe(e)})}else{document.querySelectorAll("[data-reveal]").forEach(function(e){e.classList.add("revealed")})}`,
+              // Hero avatar parallax (scroll-driven, ~180 bytes)
+              `(function(){var s=document.getElementById("home");if(!s)return;var a=s.querySelector("[data-parallax]");if(!a||matchMedia("(prefers-reduced-motion:reduce)").matches)return;var rAF=0;window.addEventListener("scroll",function(){rAF||(rAF=requestAnimationFrame(function(){rAF=0;var r=s.getBoundingClientRect(),p=Math.max(0,Math.min(1,-r.top/r.height));a.style.transform="translateY("+(p*-60)+"px)";a.style.opacity=String(1-p*.6)}))},{passive:true})})()`,
+            ].join(";"),
+          }}
+        />
         <Analytics />
         <SpeedInsights />
       </body>

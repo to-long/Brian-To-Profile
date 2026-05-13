@@ -1,10 +1,8 @@
 "use client";
 
-import { m } from "motion/react";
 import { ExternalLink } from "lucide-react";
 import { useTranslations } from "@/lib/i18n/useTranslations";
 import { SIDE_PROJECTS, type SideProjectTagColor } from "@/data/portfolio";
-import { Reveal } from "@/components/animations/Reveal";
 import { cn } from "@/lib/utils";
 
 const TAG_STYLES: Record<SideProjectTagColor, string> = {
@@ -17,7 +15,7 @@ export function SideProjects() {
   const t = useTranslations("sideProjects");
   return (
     <section className="flex flex-col items-center gap-12 py-16">
-      <Reveal>
+      <div data-reveal>
         <div className="flex flex-col items-center gap-3 px-6">
           <h2 className="gradient-heading text-center font-headings text-4xl font-bold md:text-5xl">
             {t("heading")}
@@ -26,32 +24,23 @@ export function SideProjects() {
             {t("subheading")}
           </p>
         </div>
-      </Reveal>
+      </div>
 
       <div className="grid w-full max-w-5xl grid-cols-1 gap-4 px-6 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
         {SIDE_PROJECTS.map((p, i) => {
-          const Wrapper = p.url ? m.a : m.article;
+          const Tag = p.url ? "a" : "article";
           const linkProps = p.url
-            ? { href: p.url, target: "_blank", rel: "noopener noreferrer" }
+            ? { href: p.url, target: "_blank" as const, rel: "noopener noreferrer" }
             : {};
 
           return (
-            <Wrapper
+            <Tag
               key={p.title}
               {...linkProps}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.6,
-                delay: (i % 3) * 0.1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              whileHover={{
-                y: -8,
-                transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] },
-              }}
-              className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] p-7 [transition:box-shadow_280ms_ease-out,border-color_280ms_ease-out] hover:border-[var(--color-accent)]/40 hover:shadow-xl hover:shadow-black/10 will-change-transform"
+              data-reveal
+              data-hover-lift
+              style={{ transitionDelay: `${(i % 3) * 100}ms` } as React.CSSProperties}
+              className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] p-7 [transition:transform_280ms_cubic-bezier(0.22,1,0.36,1),box-shadow_280ms_ease-out,border-color_280ms_ease-out] hover:border-[var(--color-accent)]/40 hover:shadow-xl hover:shadow-black/10"
             >
               <div className="absolute inset-0 -z-10 bg-gradient-to-br from-transparent via-transparent to-[color-mix(in_srgb,var(--color-accent)_8%,transparent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
@@ -88,7 +77,7 @@ export function SideProjects() {
               <p className="font-captions text-[11px] font-medium tracking-wide text-[var(--color-foreground-secondary)]">
                 {p.tech}
               </p>
-            </Wrapper>
+            </Tag>
           );
         })}
       </div>

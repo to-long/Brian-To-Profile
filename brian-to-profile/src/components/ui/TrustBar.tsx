@@ -1,6 +1,5 @@
 "use client";
 
-import { m } from "motion/react";
 import { useTranslations } from "@/lib/i18n/useTranslations";
 import { COMPANIES } from "@/data/portfolio";
 
@@ -8,43 +7,37 @@ export function TrustBar() {
   const t = useTranslations("trust");
   return (
     <section className="flex flex-col items-center gap-6 py-10">
-      <m.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+      <p
+        data-reveal
         className="font-captions text-[11px] font-medium tracking-[0.25em] text-[var(--color-foreground-secondary)]"
       >
         {t("label")}
-      </m.p>
-      <m.div
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.08 }}
-        className="flex flex-col items-center gap-y-5"
-      >
+      </p>
+      <div data-reveal className="flex flex-col items-center gap-y-5">
         {COMPANIES.map((row, rowIndex) => (
           <div
             key={rowIndex}
+            data-stagger
             className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 px-6 md:gap-x-16"
           >
-            {row.map((c) => (
-              <m.span
+            {row.map((c, i) => (
+              <span
                 key={c.name}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ color: "var(--color-foreground-primary)", scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 320, damping: 24 }}
-                style={{ fontWeight: c.weight, letterSpacing: `${c.spacing}px` }}
-                className="cursor-default font-headings text-base text-[var(--color-foreground-secondary)] transition-colors md:text-lg"
+                style={
+                  {
+                    fontWeight: c.weight,
+                    letterSpacing: `${c.spacing}px`,
+                    "--stagger-i": i,
+                  } as React.CSSProperties
+                }
+                className="cursor-default font-headings text-base text-[var(--color-foreground-secondary)] transition-colors hover:text-[var(--color-foreground-primary)] hover:scale-105 md:text-lg"
               >
                 {c.name}
-              </m.span>
+              </span>
             ))}
           </div>
         ))}
-      </m.div>
+      </div>
     </section>
   );
 }

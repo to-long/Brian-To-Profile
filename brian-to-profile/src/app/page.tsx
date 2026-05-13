@@ -11,6 +11,9 @@ import { TechStack } from "@/components/ui/TechStack";
 import { Footer } from "@/components/ui/Footer";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 
+/** ISR — revalidate every hour so content updates propagate without a full redeploy. */
+export const revalidate = 3600;
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",

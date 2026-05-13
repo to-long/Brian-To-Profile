@@ -1,30 +1,26 @@
 "use client";
 
-import { m } from "motion/react";
 import { useTranslations } from "@/lib/i18n/useTranslations";
 import { CAREER } from "@/data/portfolio";
-import { Reveal } from "@/components/animations/Reveal";
 
 export function CareerJourney() {
   const t = useTranslations("career");
   return (
     <section id="experience" className="flex flex-col items-center gap-12 py-16">
-      <Reveal>
+      <div data-reveal>
         <h2 className="gradient-heading px-6 text-center font-headings text-4xl font-bold md:text-5xl">
           {t("heading")}
         </h2>
-      </Reveal>
+      </div>
 
       <div className="flex w-full max-w-5xl flex-col gap-4 px-6">
         {CAREER.map((entry, i) => (
-          <m.article
+          <article
             key={entry.company}
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -6, transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] } }}
-            className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] p-6 [transition:box-shadow_280ms_ease-out,border-color_280ms_ease-out] hover:border-[var(--color-accent)]/40 hover:shadow-xl hover:shadow-black/10 will-change-transform md:flex-row md:gap-8 md:p-7"
+            data-reveal="left"
+            data-hover-lift
+            style={{ "--stagger-i": i, transitionDelay: `${i * 80}ms` } as React.CSSProperties}
+            className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] p-6 [transition:transform_280ms_cubic-bezier(0.22,1,0.36,1),box-shadow_280ms_ease-out,border-color_280ms_ease-out] hover:border-[var(--color-accent)]/40 hover:shadow-xl hover:shadow-black/10 md:flex-row md:gap-8 md:p-7"
           >
             <div className="absolute inset-0 -z-10 bg-gradient-to-br from-transparent via-transparent to-[color-mix(in_srgb,var(--color-accent)_8%,transparent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <div className="flex shrink-0 flex-col gap-1 md:w-40">
@@ -44,7 +40,7 @@ export function CareerJourney() {
                 {t(`entries.${i}.description`)}
               </p>
             </div>
-          </m.article>
+          </article>
         ))}
       </div>
     </section>

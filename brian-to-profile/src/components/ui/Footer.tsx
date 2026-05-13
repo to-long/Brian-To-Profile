@@ -1,10 +1,8 @@
 "use client";
 
-import { m } from "motion/react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "@/lib/i18n/useTranslations";
 import { CONTACT } from "@/data/portfolio";
-import { Reveal } from "@/components/animations/Reveal";
 import { cn } from "@/lib/utils";
 
 function LinkedinIcon({ size = 16, className }: { size?: number; className?: string }) {
@@ -62,19 +60,19 @@ export function Footer() {
 
   return (
     <footer id="contact" className="flex flex-col items-center gap-10 py-20">
-      <Reveal>
+      <div data-reveal>
         <h2 className="gradient-heading px-6 text-center font-headings text-4xl font-bold md:text-5xl">
           {t("heading")}
         </h2>
-      </Reveal>
+      </div>
 
-      <Reveal delay={0.1}>
+      <div data-reveal style={{ transitionDelay: "100ms" }}>
         <p className="max-w-xl px-6 text-center text-[var(--color-foreground-secondary)] md:text-base">
           {t("subheading")}
         </p>
-      </Reveal>
+      </div>
 
-      <Reveal delay={0.2}>
+      <div data-reveal style={{ transitionDelay: "200ms" }}>
         <div className="grid w-full max-w-5xl grid-cols-1 gap-3 px-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 md:grid-cols-4">
           {columns.map(({ icon: Icon, label, value, href, accent }) => {
             const mobile = (
@@ -127,18 +125,17 @@ export function Footer() {
               </div>
             );
             return href ? (
-              <m.a
+              <a
                 key={label}
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                whileHover={{ y: -3 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                data-hover-lift
                 className="block w-full"
               >
                 {mobile}
                 {desktop}
-              </m.a>
+              </a>
             ) : (
               <div key={label} className="w-full">
                 {mobile}
@@ -147,7 +144,7 @@ export function Footer() {
             );
           })}
         </div>
-      </Reveal>
+      </div>
 
       <div className="mt-6 w-full max-w-5xl border-t border-[var(--color-border-subtle)] pt-6">
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 px-6 font-captions text-xs tracking-wide text-[var(--color-foreground-secondary)]">
@@ -161,4 +158,3 @@ export function Footer() {
     </footer>
   );
 }
-
