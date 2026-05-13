@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { FEATURES } from "@/data/portfolio";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
