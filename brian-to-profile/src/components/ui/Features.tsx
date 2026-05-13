@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useTranslations } from "next-intl";
 import { FEATURES } from "@/data/portfolio";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
@@ -20,7 +20,7 @@ export function Features() {
           const Icon = f.icon;
           return (
             <StaggerItem key={f.title} className="flex flex-col items-center gap-4 text-center">
-              <motion.div
+              <m.div
                 whileHover={{ y: -4, rotate: -3 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 style={{
@@ -29,7 +29,7 @@ export function Features() {
                 className="flex h-12 w-12 items-center justify-center rounded-xl"
               >
                 <Icon size={22} strokeWidth={1.8} style={{ color: f.iconColor }} />
-              </motion.div>
+              </m.div>
               <h3 className="font-headings text-sm font-bold">{t(`items.${i}.title`)}</h3>
               <p className="font-captions text-[13px] leading-relaxed text-[var(--color-foreground-secondary)] [text-wrap:pretty]">
                 {t(`items.${i}.description`)}

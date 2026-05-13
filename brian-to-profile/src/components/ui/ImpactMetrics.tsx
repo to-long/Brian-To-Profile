@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "motion/react";
+import { m, useInView } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { METRICS } from "@/data/portfolio";
@@ -50,9 +50,9 @@ export function ImpactMetrics() {
         </h2>
       </Reveal>
       <div className="grid w-full max-w-5xl grid-cols-1 gap-4 px-6 md:grid-cols-3 md:gap-6">
-        {METRICS.map((m, i) => (
-          <motion.div
-            key={m.value}
+        {METRICS.map((metric, i) => (
+          <m.div
+            key={metric.value}
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
@@ -62,12 +62,12 @@ export function ImpactMetrics() {
           >
             <div className="absolute inset-0 -z-10 bg-gradient-to-br from-transparent via-transparent to-[color-mix(in_srgb,var(--color-accent)_8%,transparent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <span className="font-headings text-5xl font-bold leading-none text-[var(--color-accent)] md:text-6xl">
-              <CountValue value={m.value} />
+              <CountValue value={metric.value} />
             </span>
             <p className="text-sm leading-relaxed text-[var(--color-foreground-secondary)]">
               {t(`items.${i}`)}
             </p>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </section>

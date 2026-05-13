@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useTranslations } from "next-intl";
 import { COMPANIES } from "@/data/portfolio";
 
@@ -8,15 +8,15 @@ export function TrustBar() {
   const t = useTranslations("trust");
   return (
     <section className="flex flex-col items-center gap-6 py-10">
-      <motion.p
+      <m.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         className="font-captions text-[11px] font-medium tracking-[0.25em] text-[var(--color-foreground-secondary)]"
       >
         {t("label")}
-      </motion.p>
-      <motion.div
+      </m.p>
+      <m.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -29,7 +29,7 @@ export function TrustBar() {
             className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 px-6 md:gap-x-16"
           >
             {row.map((c) => (
-              <motion.span
+              <m.span
                 key={c.name}
                 initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -40,11 +40,11 @@ export function TrustBar() {
                 className="cursor-default font-headings text-base text-[var(--color-foreground-secondary)] transition-colors md:text-lg"
               >
                 {c.name}
-              </motion.span>
+              </m.span>
             ))}
           </div>
         ))}
-      </motion.div>
+      </m.div>
     </section>
   );
 }

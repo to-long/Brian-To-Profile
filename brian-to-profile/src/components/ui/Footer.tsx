@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { CONTACT } from "@/data/portfolio";
@@ -127,7 +127,7 @@ export function Footer() {
               </div>
             );
             return href ? (
-              <motion.a
+              <m.a
                 key={label}
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
@@ -138,7 +138,7 @@ export function Footer() {
               >
                 {mobile}
                 {desktop}
-              </motion.a>
+              </m.a>
             ) : (
               <div key={label} className="w-full">
                 {mobile}

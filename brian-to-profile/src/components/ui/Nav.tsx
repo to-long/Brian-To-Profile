@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, m } from "motion/react";
 import { Download, Menu, X } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
@@ -89,7 +89,7 @@ export function Nav() {
   return (
     <>
       {mobileOpen ? (
-        <motion.button
+        <m.button
           type="button"
           aria-label="Close menu"
           initial={{ opacity: 0 }}
@@ -104,7 +104,7 @@ export function Nav() {
         />
       ) : null}
 
-      <motion.nav
+      <m.nav
       initial={{ y: -32, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -117,7 +117,7 @@ export function Nav() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-4 md:gap-4 md:px-6 lg:px-10">
         <a href="#home" className="flex shrink-0 items-center gap-2.5">
-          <motion.span
+          <m.span
             whileHover={{ scale: 1.06, rotate: -4 }}
             transition={{ type: "spring", stiffness: 400, damping: 18 }}
             style={{
@@ -129,7 +129,7 @@ export function Nav() {
             <span className="font-headings text-[15px] font-bold leading-none tracking-[-0.04em] text-white">
               BT
             </span>
-          </motion.span>
+          </m.span>
           <span className="font-headings text-[18px] font-bold leading-none tracking-[-0.01em] whitespace-nowrap">
             Brian To
           </span>
@@ -137,7 +137,7 @@ export function Nav() {
 
         <ul className="relative hidden items-center gap-4 md:flex lg:gap-7">
           {indicator ? (
-            <motion.span
+            <m.span
               aria-hidden
               className="absolute -bottom-1.5 h-[2px] rounded-full bg-[var(--color-accent)] pointer-events-none"
               initial={false}
@@ -189,7 +189,7 @@ export function Nav() {
           aria-label="Open menu"
         >
           <AnimatePresence mode="wait" initial={false}>
-            <motion.span
+            <m.span
               key={mobileOpen ? "close" : "open"}
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
@@ -197,14 +197,14 @@ export function Nav() {
               transition={{ duration: 0.18 }}
             >
               {mobileOpen ? <X size={18} /> : <Menu size={18} />}
-            </motion.span>
+            </m.span>
           </AnimatePresence>
         </button>
       </div>
 
       <AnimatePresence>
         {mobileOpen ? (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
@@ -244,11 +244,11 @@ export function Nav() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         ) : null}
       </AnimatePresence>
 
-    </motion.nav>
+    </m.nav>
     </>
   );
 }

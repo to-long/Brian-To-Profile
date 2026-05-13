@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useTranslations } from "next-intl";
 import { TECH_STACK } from "@/data/portfolio";
 import { Reveal } from "@/components/animations/Reveal";
@@ -24,7 +24,7 @@ export function TechStack() {
         {TECH_STACK.map((cat, i) => {
           const Icon = cat.icon;
           return (
-            <motion.div
+            <m.div
               key={cat.title}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -41,7 +41,7 @@ export function TechStack() {
               <p className="whitespace-pre-line text-[13px] leading-relaxed text-[var(--color-foreground-secondary)]">
                 {cat.items}
               </p>
-            </motion.div>
+            </m.div>
           );
         })}
       </div>

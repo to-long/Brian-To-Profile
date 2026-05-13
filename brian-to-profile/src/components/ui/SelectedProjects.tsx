@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useTranslations } from "next-intl";
 import { PROJECTS, type ProjectTagColor } from "@/data/portfolio";
 import { Reveal } from "@/components/animations/Reveal";
@@ -29,7 +29,7 @@ export function SelectedProjects() {
 
       <div className="grid w-full max-w-5xl grid-cols-1 gap-4 px-6 md:grid-cols-3 md:gap-6">
         {PROJECTS.map((p, i) => (
-          <motion.article
+          <m.article
             key={p.title}
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export function SelectedProjects() {
             <p className="font-captions text-[11px] font-medium tracking-wide text-[var(--color-foreground-secondary)]">
               {p.tech}
             </p>
-          </motion.article>
+          </m.article>
         ))}
       </div>
     </section>

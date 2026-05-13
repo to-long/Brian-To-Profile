@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import withBundleAnalyzer from "@next/bundle-analyzer";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+const analyzeBundles = withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" });
 
 /**
  * Security headers — addresses OWASP top concerns:
@@ -103,4 +105,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withNextIntl(nextConfig);
+export default analyzeBundles(withNextIntl(nextConfig));

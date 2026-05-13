@@ -4,6 +4,7 @@ import { getLocale, getMessages, setRequestLocale } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { IntlProvider } from "@/components/providers/IntlProvider";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 import type { Locale } from "@/lib/i18n/translations";
 import "./globals.css";
 
@@ -131,7 +132,9 @@ export default async function RootLayout({
       </head>
       <body className="min-h-full">
         <IntlProvider initialLocale={locale} initialMessages={messages}>
-          {children}
+          <MotionProvider>
+            {children}
+          </MotionProvider>
         </IntlProvider>
         <Analytics />
         <SpeedInsights />
