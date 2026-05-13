@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Inter, Funnel_Sans } from "next/font/google";
 import { getLocale, getMessages, setRequestLocale } from "next-intl/server";
 import { IntlProvider } from "@/components/providers/IntlProvider";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 import type { Locale } from "@/lib/i18n/translations";
 import "./globals.css";
 
@@ -129,7 +130,9 @@ export default async function RootLayout({
       </head>
       <body className="min-h-full">
         <IntlProvider initialLocale={locale} initialMessages={messages}>
-          {children}
+          <MotionProvider>
+            {children}
+          </MotionProvider>
         </IntlProvider>
       </body>
     </html>

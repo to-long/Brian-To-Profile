@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { m, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export function DeviceCascade() {
@@ -15,7 +15,7 @@ export function DeviceCascade() {
 
   return (
     <section ref={ref} className="relative mx-auto hidden h-[520px] w-full max-w-5xl overflow-hidden px-6 sm:block md:h-[640px]">
-      <motion.div
+      <m.div
         style={{ y: yLaptop }}
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -90,7 +90,7 @@ export function DeviceCascade() {
                 </div>
                 <div className="flex flex-1 items-end gap-2.5 px-1 pb-2">
                   {[48, 72, 60, 96, 80, 54, 68].map((h, i) => (
-                    <motion.div
+                    <m.div
                       key={i}
                       initial={{ scaleY: 0 }}
                       whileInView={{ scaleY: 1 }}
@@ -103,16 +103,16 @@ export function DeviceCascade() {
                       data-h={h}
                     >
                       <div style={{ height: `${h}px` }} />
-                    </motion.div>
+                    </m.div>
                   ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         style={{ y: yPhone, rotate: rotPhone }}
         initial={{ opacity: 0, x: 40 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -163,7 +163,7 @@ export function DeviceCascade() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   );
 }

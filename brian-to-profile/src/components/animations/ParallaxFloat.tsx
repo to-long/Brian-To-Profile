@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { m, useScroll, useTransform } from "framer-motion";
 import { ReactNode, useRef } from "react";
 
 type ParallaxFloatProps = {
@@ -18,8 +18,8 @@ export function ParallaxFloat({ children, offset = 80, className }: ParallaxFloa
   const y = useTransform(scrollYProgress, [0, 1], [offset, -offset]);
 
   return (
-    <motion.div ref={ref} style={{ y }} className={className}>
+    <m.div ref={ref} style={{ y }} className={className}>
       {children}
-    </motion.div>
+    </m.div>
   );
 }
