@@ -11,9 +11,28 @@ import { TechStack } from "@/components/ui/TechStack";
 import { Footer } from "@/components/ui/Footer";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Brian To",
+  alternateName: "To Hoang Long",
+  url: "https://brian-to.dev",
+  image: "https://brian-to.dev/avatar.png",
+  jobTitle: "Principal Fullstack Engineer",
+  worksFor: { "@type": "Organization", name: "Money Forward" },
+  alumniOf: { "@type": "CollegeOrUniversity", name: "Hanoi University of Science and Technology (HUST)" },
+  knowsAbout: ["React", "Node.js", "Go", "Python", "Micro-FE", "AI/ML", "System Architecture"],
+  sameAs: ["https://www.linkedin.com/in/to-hoang-long-brian/"],
+  address: { "@type": "PostalAddress", addressLocality: "Hanoi", addressCountry: "VN" },
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ScrollProgress />
       <Nav />
       <main className="mx-auto flex max-w-7xl flex-col gap-12 md:gap-24">

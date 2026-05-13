@@ -20,10 +20,57 @@ const funnel = Funnel_Sans({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://brian-to.dev";
+const siteTitle = "Brian To — Principal Fullstack Engineer · Technical Leader";
+const siteDescription =
+  "15 years building high-scale products, leading cross-border teams, and turning complex systems into clean, performant experiences.";
+
 export const metadata: Metadata = {
-  title: "Brian To — Principal Fullstack Engineer · Technical Leader",
-  description:
-    "15 years building high-scale products, leading cross-border teams, and turning complex systems into clean, performant experiences.",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  keywords: [
+    "Brian To",
+    "Principal Engineer",
+    "Fullstack Engineer",
+    "Technical Leader",
+    "React",
+    "Node.js",
+    "Go",
+    "Micro-FE",
+    "AI Integration",
+    "Vietnam",
+    "Japan",
+  ],
+  authors: [{ name: "Brian To", url: siteUrl }],
+  creator: "Brian To",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Brian To",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/btLogo.webp",
     apple: "/btLogo.webp",
