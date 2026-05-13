@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Inter, Funnel_Sans } from "next/font/google";
 import { getLocale, getMessages, setRequestLocale } from "next-intl/server";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { IntlProvider } from "@/components/providers/IntlProvider";
 import type { Locale } from "@/lib/i18n/translations";
 import "./globals.css";
@@ -131,6 +133,8 @@ export default async function RootLayout({
         <IntlProvider initialLocale={locale} initialMessages={messages}>
           {children}
         </IntlProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
