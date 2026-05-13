@@ -20,7 +20,7 @@ export function CareerJourney() {
             data-reveal="left"
 
             style={{ "--stagger-i": i, transitionDelay: `${i * 80}ms` } as React.CSSProperties}
-            className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] p-6 [transition:transform_280ms_cubic-bezier(0.22,1,0.36,1),box-shadow_280ms_ease-out,border-color_280ms_ease-out] hover:border-[var(--color-accent)]/40 hover:shadow-xl hover:shadow-black/10 md:flex-row md:gap-8 md:p-7"
+            className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] p-6 [transition:transform_280ms_cubic-bezier(0.22,1,0.36,1),box-shadow_280ms_ease-out,border-color_280ms_ease-out] hover:border-[var(--color-accent)]/40 hover:shadow-lg hover:shadow-black/5 md:flex-row md:gap-8 md:p-7"
           >
             <div className="absolute inset-0 -z-10 bg-gradient-to-br from-transparent via-transparent to-[color-mix(in_srgb,var(--color-accent)_8%,transparent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <div className="flex shrink-0 flex-col gap-1 md:w-40">

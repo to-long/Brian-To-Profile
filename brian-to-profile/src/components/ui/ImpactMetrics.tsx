@@ -57,8 +57,7 @@ export function ImpactMetrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -8, transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] } }}
-            className="group relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] p-8 text-center [transition:box-shadow_280ms_ease-out,border-color_280ms_ease-out] hover:border-[var(--color-accent)]/40 hover:shadow-xl hover:shadow-black/10 will-change-transform"
+            className="group relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] p-8 text-center [transition:box-shadow_280ms_ease-out,border-color_280ms_ease-out] hover:border-[var(--color-accent)]/40 hover:shadow-lg hover:shadow-black/5"
           >
             <div className="absolute inset-0 -z-10 bg-gradient-to-br from-transparent via-transparent to-[color-mix(in_srgb,var(--color-accent)_8%,transparent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <span className="font-headings text-5xl font-bold leading-none text-[var(--color-accent)] md:text-6xl">
