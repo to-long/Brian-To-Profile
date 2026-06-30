@@ -6,8 +6,7 @@ import { HeroContent } from "./HeroContent";
  * on the server for fast LCP. Only the text layer (HeroContent) hydrates
  * on the client for locale switching.
  *
- * The avatar parallax effect is handled by a tiny inline script
- * (`data-parallax`) in layout.tsx — no motion/react needed.
+ * The avatar parallax effect is wired up by MotionProvider via `data-parallax`.
  */
 export function Hero() {
   return (

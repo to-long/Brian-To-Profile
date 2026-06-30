@@ -175,7 +175,7 @@ footer[id] {
 [data-reveal="scale"] {
   transform: scale(0.95);
 }
-[data-reveal].revealed {
+[data-reveal][data-revealed] {
   opacity: 1;
   transform: none;
   filter: blur(0px);
