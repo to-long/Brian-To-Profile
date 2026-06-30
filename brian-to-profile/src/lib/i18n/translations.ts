@@ -90,69 +90,27 @@ export const translations = {
       subheading: "A glimpse of products and platforms I've shaped over the years",
       items: [
         {
-          title: "Accounting GPT",
+          title: "TMG Payment Gateway",
           description:
-            "AI assistant published on the GPT Store. Analyzes accounting statements and auto-generates reports for finance teams.",
+            "B2B payment gateway with High-Frequency Trading functionality tailored for SMEs.",
         },
         {
-          title: "AI Help Assistant",
+          title: "Consolidated Accounting",
           description:
-            "In-product RAG chatbot answering user questions in real time. Drove documentation efficiency and UX improvements.",
+            "SaaS that combines parent and subsidiary financials into a single economic entity. AI agents and custom GPTs analyze corporate financial health.",
         },
         {
-          title: "Micro-FE Standardization",
+          title: "Asset Accounting",
           description:
-            "Designed the Micro-FE framework adopted across the entire corporation. Earned the MFV Professional Award.",
-        },
-        {
-          title: "Real-Time Shipping Integration",
-          description:
-            "Deep API integration with major shipping providers. Reduced lost/wrong packages and minimized PayPal disputes.",
+            "SaaS managing asset lifecycles, depreciation, and financial compliance. Standardized Micro-FE, Feature Flags, UI components, and Log standards across the corporation.",
         },
         {
           title: "Cross-Border Dropshipping Platform",
           description:
-            "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders. Includes React Native mobile app.",
+            "Architected the core e-commerce platform serving millions. Scaled concurrent users 8.5x (3,500 → 30,000) and daily orders 7x (7,000 → 50,000). Deep shipping API integration cut lost/wrong packages and PayPal disputes. Fixed legacy memory leaks that caused weekly server crashes.",
         },
         {
-          title: "Auth Microservice (Pub/Sub)",
-          description:
-            "High-performance authentication service shared across multiple European products. Built around RabbitMQ Pub/Sub.",
-        },
-      ],
-    },
-    sideProjects: {
-      heading: "Side projects",
-      subheading:
-        "Things I build on weekends — just for fun and to learn new tools",
-      items: [
-        {
-          title: "SwiftPay DeFi",
-          description:
-            "Decentralized payment gateway — on-chain multi-currency swaps, smart contract escrow, yield-bearing merchant vaults, and fiat off-ramp integration.",
-        },
-        {
-          title: "TMG Payments",
-          description:
-            "Payment processing platform for healthcare & automotive businesses — practice management integration, multi-channel payments, surcharge program, and POS terminal management.",
-        },
-        {
-          title: "ImpactCocoa",
-          description:
-            "Farm-to-bar traceability for sustainable cocoa. Tracks each batch from co-op to chocolate maker; permissions + audit trail for buyers.",
-        },
-        {
-          title: "dutchandco.nl",
-          description:
-            "Renewable energy company website — solar panel configurator, energy savings calculator, and consultation booking.",
-        },
-        {
-          title: "Sunnypoint",
-          description:
-            "Cloud-based CRM and loyalty platform for beauty salons, restaurants, and retail shops in Japan — point card management, marketing automation, reservation system, mobile app, and multi-store analytics serving 2,500+ stores.",
-        },
-        {
-          title: "Ybox.vn",
+          title: "YBOX",
           description:
             "Social network for Vietnamese students — career board, skill-sharing groups, and community forums for early-career talent.",
         },
@@ -257,68 +215,27 @@ export const translations = {
       subheading: "長年にわたり手がけてきた製品とプラットフォーム",
       items: [
         {
-          title: "Accounting GPT",
+          title: "TMG ペイメントゲートウェイ",
           description:
-            "GPT Store で公開した AI アシスタント。会計帳票を解析し、財務チーム向けのレポートを自動生成。",
+            "SME 向けの高頻度取引機能を備えた B2B 決済ゲートウェイ。",
         },
         {
-          title: "AI ヘルプアシスタント",
+          title: "連結会計",
           description:
-            "プロダクト内蔵の RAG チャットボットでユーザーの質問にリアルタイム回答。ドキュメント効率と UX を改善。",
+            "親会社と子会社の財務諸表を統合し、単一の経済主体として表示する SaaS。AI エージェントとカスタム GPT で企業の財務健全性を分析。",
         },
         {
-          title: "Micro-FE 標準化",
+          title: "資産会計",
           description:
-            "全社採用された Micro-FE フレームワークを設計。MFV Professional Award を受賞。",
-        },
-        {
-          title: "リアルタイム配送連携",
-          description:
-            "主要配送業者の API と深く連携。紛失・誤配を削減し、PayPal の紛争を最小化。",
+            "資産ライフサイクル・減価償却・財務コンプライアンスを管理する SaaS。Micro-FE・Feature Flags・UI コンポーネント・ログを全社標準化。",
         },
         {
           title: "クロスボーダー ドロップシッピング基盤",
           description:
-            "数百万ユーザーを支える基盤を設計。同時接続 3,500 → 30,000、日次 50,000 注文を処理。React Native モバイルアプリを含む。",
+            "数百万ユーザーを支える EC 基盤を設計。同時接続を 8.5 倍（3,500 → 30,000）、日次注文を 7 倍（7,000 → 50,000）に拡張。配送 API との深い連携で紛失・誤配と PayPal の紛争を削減。週次のサーバークラッシュを引き起こしていたメモリリークを解消。",
         },
         {
-          title: "認証マイクロサービス (Pub/Sub)",
-          description:
-            "複数の欧州プロダクトで共有する高性能な認証基盤。RabbitMQ Pub/Sub をベースに構築。",
-        },
-      ],
-    },
-    sideProjects: {
-      heading: "サイドプロジェクト",
-      subheading: "週末に趣味と学習のために作っているもの",
-      items: [
-        {
-          title: "SwiftPay DeFi",
-          description:
-            "分散型決済ゲートウェイ — オンチェーン・マルチ通貨スワップ、スマートコントラクト・エスクロー、利回り付きマーチャントボールト、法定通貨オフランプ連携。",
-        },
-        {
-          title: "TMG Payments",
-          description:
-            "医療・自動車業界向け決済プラットフォーム — 管理ソフト連携、マルチチャネル決済、サーチャージプログラム、POS端末管理。",
-        },
-        {
-          title: "ImpactCocoa",
-          description:
-            "サステナブルカカオの農場からチョコレートまでのトレーサビリティ。各バッチを協同組合から製造者まで追跡。",
-        },
-        {
-          title: "dutchandco.nl",
-          description:
-            "再生可能エネルギー企業サイト — ソーラーパネル構成、省エネ計算、コンサルティング予約。",
-        },
-        {
-          title: "Sunnypoint",
-          description:
-            "美容院・飲食店・小売店向けクラウド型 CRM・ロイヤルティプラットフォーム — ポイントカード管理、マーケティング自動化、予約システム、モバイルアプリ、2,500店舗以上のマルチ店舗分析。",
-        },
-        {
-          title: "Ybox.vn",
+          title: "YBOX",
           description:
             "ベトナムの学生向け SNS — キャリアボード、スキルシェアグループ、新卒向けコミュニティフォーラム。",
         },

@@ -120,7 +120,7 @@ export const CAREER: CareerEntry[] = [
   },
 ];
 
-export type ProjectTagColor = "blue" | "orange" | "green";
+export type ProjectTagColor = "blue" | "orange" | "green" | "purple";
 
 export type Project = {
   company: string;
@@ -136,37 +136,28 @@ export const PROJECTS: Project[] = [
     company: "Money Forward",
     tagColor: "blue",
     year: "2025",
-    title: "Accounting GPT",
+    title: "TMG Payment Gateway",
     description:
-      "AI assistant published on the GPT Store. Analyzes accounting statements and auto-generates reports for finance teams.",
-    tech: "ChatGPT · Qdrant · RAG",
+      "B2B payment gateway with High-Frequency Trading functionality tailored for SMEs.",
+    tech: "Node.js · Bun · Deno · Hono · Next.js · PostgreSQL · QuestDB · Redis · RabbitMQ · OCR",
   },
   {
     company: "Money Forward",
     tagColor: "blue",
     year: "2024",
-    title: "AI Help Assistant",
+    title: "Consolidated Accounting",
     description:
-      "In-product RAG chatbot answering user questions in real time. Drove documentation efficiency and UX improvements.",
-    tech: "LangChain · Qdrant · Claude",
+      "SaaS that combines parent and subsidiary financials into a single economic entity. AI agents and custom GPTs analyze corporate financial health.",
+    tech: "Kotlin · Node.js · Next.js · GraphQL · Qdrant · Redis · PostgreSQL",
   },
   {
     company: "Money Forward",
     tagColor: "blue",
-    year: "2022",
-    title: "Micro-FE Standardization",
+    year: "2023",
+    title: "Asset Accounting",
     description:
-      "Designed the Micro-FE framework adopted across the entire corporation. Earned the MFV Professional Award.",
-    tech: "Rsbuild · Module Federation · React",
-  },
-  {
-    company: "Crossian",
-    tagColor: "orange",
-    year: "2021",
-    title: "Real-Time Shipping Integration",
-    description:
-      "Deep API integration with major shipping providers. Reduced lost/wrong packages and minimized PayPal disputes.",
-    tech: "Node.js · Redis · GraphQL",
+      "SaaS managing asset lifecycles, depreciation, and financial compliance. Standardized Micro-FE, Feature Flags, UI components, and Log standards across the corporation.",
+    tech: "Go · Node.js · Next.js · React · Micro-FE · Monorepo · Kafka · PostgreSQL",
   },
   {
     company: "Crossian",
@@ -174,17 +165,17 @@ export const PROJECTS: Project[] = [
     year: "2020",
     title: "Cross-Border Dropshipping Platform",
     description:
-      "Architected the core platform serving millions. Scaled from 3,500 to 30,000 concurrent users; 50,000 daily orders. Includes React Native mobile app.",
-    tech: "Kafka · MongoDB · NestJS · Next.js · React Native",
+      "Architected the core e-commerce platform serving millions. Scaled concurrent users 8.5x (3,500 → 30,000) and daily orders 7x (7,000 → 50,000). Deep shipping API integration cut lost/wrong packages and PayPal disputes. Fixed legacy memory leaks that caused weekly server crashes.",
+    tech: "Next.js · NestJS · Node.js · Kafka · MongoDB · React Native",
   },
   {
-    company: "Niteco",
-    tagColor: "green",
+    company: "Hobby",
+    tagColor: "purple",
     year: "2018",
-    title: "Auth Microservice (Pub/Sub)",
+    title: "YBOX",
     description:
-      "High-performance authentication service shared across multiple European products. Built around RabbitMQ Pub/Sub.",
-    tech: "Java · Spring · RabbitMQ · OAuth",
+      "Social network for Vietnamese students — career board, skill-sharing groups, and community forums for early-career talent.",
+    tech: "Node.js · React · MySQL · Kafka · Redis · Varnish · Cloudflare",
   },
 ];
 
@@ -224,79 +215,6 @@ export const TECH_STACK: TechCategory[] = [
     icon: Database,
     title: "Database",
     items: "PostgreSQL · MongoDB · Redis\nKafka · ElasticSearch · Firebase",
-  },
-];
-
-export type SideProjectTagColor = "purple" | "blue" | "green";
-
-export type SideProject = {
-  tag: string;
-  tagColor: SideProjectTagColor;
-  year: string;
-  title: string;
-  description: string;
-  tech: string;
-  url?: string;
-};
-
-export const SIDE_PROJECTS: SideProject[] = [
-  {
-    tag: "Freelance",
-    tagColor: "green",
-    year: "2026",
-    title: "SwiftPay DeFi",
-    description:
-      "Decentralized payment gateway — on-chain multi-currency swaps, smart contract escrow, yield-bearing merchant vaults, and fiat off-ramp integration.",
-    tech: "Solidity · Web3.js · React · Hardhat · EVM",
-  },
-  {
-    tag: "Freelance",
-    tagColor: "green",
-    year: "2025",
-    title: "TMG Payments",
-    description:
-      "Payment processing platform for healthcare & automotive businesses — practice management integration, multi-channel payments, surcharge program, and POS terminal management.",
-    tech: "NestJs · NextJs · Payment Gateway · POS Integration",
-    url: "https://tmgpayments.com",
-  },
-  {
-    tag: "Freelance",
-    tagColor: "green",
-    year: "2022",
-    title: "ImpactCocoa",
-    description:
-      "Farm-to-bar traceability for sustainable cocoa. Tracks each batch from co-op to chocolate maker; permissions + audit trail for buyers.",
-    tech: "React · Node.js · PostgreSQL · AgriTech · SupplyChain",
-  },
-  {
-    tag: "Freelance",
-    tagColor: "green",
-    year: "2020",
-    title: "dutchandco.nl",
-    description:
-      "Renewable energy company website — solar panel configurator, energy savings calculator, and consultation booking.",
-    tech: "Next.js · Strapi CMS · Digital Ocean · Renewable energy",
-    url: "https://dutchandco.nl",
-  },
-  {
-    tag: "Freelance",
-    tagColor: "green",
-    year: "2018",
-    title: "Sunnypoint",
-    description:
-      "Cloud-based CRM and loyalty platform for beauty salons, restaurants, and retail shops in Japan — point card management, marketing automation, reservation system, mobile app, and multi-store analytics serving 2,500+ stores.",
-    tech: "Next.js · React Native · Java · MySQL · CRM · Loyalty",
-    url: "https://s.sunnypoint.jp",
-  },
-  {
-    tag: "Personal",
-    tagColor: "purple",
-    year: "2016",
-    title: "Ybox.vn",
-    description:
-      "Social network for Vietnamese students — career board, skill-sharing groups, and community forums for early-career talent.",
-    tech: "NodeJs · ReactJs · MySQL · Digital Ocean · Social Network",
-    url: "https://ybox.vn",
   },
 ];
 

@@ -8,6 +8,7 @@ const TAG_STYLES: Record<ProjectTagColor, string> = {
   blue: "bg-[var(--color-accent-soft)] text-[var(--color-accent)]",
   orange: "bg-[var(--color-tag-orange)] text-[var(--color-tag-orange-fg)]",
   green: "bg-[var(--color-tag-green)] text-[var(--color-tag-green-fg)]",
+  purple: "bg-[var(--color-tag-purple)] text-[var(--color-tag-purple-fg)]",
 };
 
 export function SelectedProjects() {
